@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "../components/Header/Header"
 import {link, navigate} from "gatsby"
+import Header from "/components/Header/Header"
 
 class LoginPage extends React.Component {
     localStorage;
