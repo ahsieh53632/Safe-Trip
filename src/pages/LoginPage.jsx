@@ -3,7 +3,6 @@ import Header from "../components/Header/Header"
 import {link, navigate} from "gatsby"
 
 import MainPage from "./MainPage/MainPage.jsx"
-import { Redirect } from "react-router-dom";
 
 
 class LoginPage extends React.Component {
@@ -17,9 +16,25 @@ class LoginPage extends React.Component {
         }
         
         if(this.localStorage != null) {
-            //TODO: AUTHEN!
-            // Redirect to main page if username has already been set
-            
+            var cache_account = this.localStorage.getItem("account");
+            var cache_pwd = this.localStorage.getItem("password");
+            fetch('http://localhost:3000/LoginPage/auth', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "account": cache_account,
+                "pwd": cache_pwd
+            })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    navigate('/MainPage/MainPage')
+                }
+            })
         }
     }
 
@@ -39,6 +54,10 @@ class LoginPage extends React.Component {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
+                if (this.localStorage != null) {
+                    this.localStorage.setItem("account", account)
+                    this.localStorage.setItem("account", password) 
+                }
                 navigate('/MainPage/MainPage')
             } else {
                 alert('WRONG username or password')
@@ -64,7 +83,10 @@ class LoginPage extends React.Component {
         .then(data => {
             console.log(data);
             if (data.success) {
-                alert('success')
+                if (this.localStorage != null) {
+                    this.localStorage.setItem("account", account)
+                    this.localStorage.setItem("account", password) 
+                }
                 console.log('success')
                 navigate('/MainPage/MainPage')
             } else {

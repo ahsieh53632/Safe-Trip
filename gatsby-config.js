@@ -1,7 +1,7 @@
 module.exports = {
-    pathPrefix: `/tour-of-taiwan`,
+    pathPrefix: `/safe-trip`,
     siteMetadata: {
-        title: "Tour of Taiwan",
+        title: "safe-trip",
     },
     plugins: [
         "gatsby-plugin-resolve-src",

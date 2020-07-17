@@ -21,8 +21,8 @@ con.connect(function(err){
 
 
 /* GET home page. */
-router.post('/auth', function(req, res) {
-  console.log('posting from log in');
+router.get('/alert', function(req, res) {
+  console.log('getting aler data');
   var account = req.body.account;
   var password = req.body.pwd;
   var loggedin = false
@@ -35,36 +35,14 @@ router.post('/auth', function(req, res) {
       console.log('success')
       loggedin = true;
       console.log(JSON.stringify({ "success": loggedin }));
-      con.close()
       res.end(JSON.stringify({ "success": loggedin }));
     } else {
       loggedin = false;
-      con.close()
       res.end(JSON.stringify({ "success": loggedin }));
     }
   });
   
 });
 
-
-router.put('/reg', function(req, res) {
-  console.log('registering account');
-  var account = req.body.account;
-  var password = req.body.pwd;
-
-  var query = "INSERT INTO person (`account`, `password`, `name`, `phone`, `condition`, `address`) \
-                VALUES (?, ?, 'NONE', 'NONE', 'NORMAL', 'NONE');"
-
-  con.query(query, [account, password], function(err, r, fields) {
-    if (err) {
-      console.log(err);
-      con.close()
-      res.end(JSON.stringify({ "success": false }));
-    } else {
-      con.close()
-      res.end(JSON.stringify({ "success": true }));
-    }
-  });
-});
 
 module.exports = router;
