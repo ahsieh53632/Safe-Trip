@@ -1,7 +1,10 @@
 import React from "react"
 import Header from "../components/Header/Header"
 import {link, navigate} from "gatsby"
-import Header from "/components/Header/Header"
+
+import MainPage from "./MainPage/MainPage.jsx"
+import { Redirect } from "react-router-dom";
+
 
 class LoginPage extends React.Component {
     localStorage;
@@ -36,8 +39,9 @@ class LoginPage extends React.Component {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                navigate('/MainPage')
+                navigate('/MainPage/MainPage')
             } else {
+                alert('WRONG username or password')
                 navigate('/')
             }
         })
@@ -58,10 +62,13 @@ class LoginPage extends React.Component {
         })
         .then(res => res.json())
         .then(data => {
+            console.log(data);
             if (data.success) {
-                navigate('/MainPage')
+                alert('success')
+                console.log('success')
+                navigate('/MainPage/MainPage')
             } else {
-                alert()
+                alert('user name used already!')
             }
         })
     }
@@ -75,6 +82,9 @@ class LoginPage extends React.Component {
             <input type="password" onChange={(e)=>{this.setState({account: this.state.account, password: e.target.value})}}/>
             <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
                 <button type="submit">log in</button>
+            </form>
+            <form ref="form2" onSubmit={(e) => this.handleReg(e, this.state.account, this.state.password)}>
+                <button type="submit">register</button>
             </form>
             </div>
         )

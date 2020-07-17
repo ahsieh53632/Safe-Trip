@@ -58,7 +58,7 @@ router.put('/reg', function(req, res) {
       console.log(err);
       res.end(JSON.stringify({ "success": false }));
     } else {
-      console.log(JSON.stringify({ "success": true }));
+      res.end(JSON.stringify({ "success": true }));
     }
   });
 });

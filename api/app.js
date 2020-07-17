@@ -7,7 +7,7 @@ var cors = require("cors");
 var mysql = require('mysql');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var LoginRouter = require('./routes/Login')
+var LoginRouter = require('./routes/Login');
 var uuid = require('uuid');
 var app = express();
 
