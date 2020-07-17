@@ -5,9 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
 var mysql = require('mysql');
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var path = require('path');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var LoginRouter = require('./routes/Login')
@@ -26,14 +23,14 @@ connection.connect(function(err){
 });
 
 
-var insertleo = "INSERT INTO person (`account`, `password`, `name`, `phone`, `condition`, `address`) \
-VALUES ('leo', '123', 'leo', '09', 'NORMAL', '123');"
+// var insertleo = "INSERT INTO person (`account`, `password`, `name`, `phone`, `condition`, `address`) \
+// VALUES ('leo', '123', 'leo', '09', 'NORMAL', '123');"
 
-//test code
-connection.query(insertleo, function (err, result){
-  if (err) throw err;
-  console.log(result)
-})
+// //test code
+// connection.query(insertleo, function (err, result){
+//   if (err) throw err;
+//   console.log(result)
+// })
 
 //
 
@@ -42,14 +39,6 @@ connection.query(insertleo, function (err, result){
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
-
 app.use(logger('dev'));
 app.use(cors())
 app.use(express.json());
@@ -57,9 +46,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/LoginPage', loginrouter);
+app.use('/LoginPage', LoginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
