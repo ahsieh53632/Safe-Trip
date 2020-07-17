@@ -68,20 +68,12 @@ class LoginPage extends React.Component {
     render() {
         return(
             <div>
-                <Header
-                absolute
-                color="transparent"
-                brand="123"  
-            />
             <div>輸入帳號</div>
             <input type="text" onChange={(e)=>{this.setState({account: e.target.value, password: this.state.password})}}/>
             <div>輸入密碼</div>
             <input type="password" onChange={(e)=>{this.setState({account: this.state.account, password: e.target.value})}}/>
             <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
                 <button type="submit">log in</button>
-            </form>
-            <form ref="form" onSubmit={(e) => this.handleReg(e, this.state.account, this.state.password)}>
-                <button type="submit" >創建帳戶</button>
             </form>
             </div>
         )

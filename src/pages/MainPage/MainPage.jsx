@@ -3,10 +3,10 @@ import {Link, navigate} from "gatsby";
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
-// import bool from "prop-types";
 import Button from "../../components/CustomButtons/Button.jsx";
 // import image from "assets/img/bg7.jpg";
 
+import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 
 class MainPage extends Component{
       state;
