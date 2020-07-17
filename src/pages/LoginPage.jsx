@@ -16,6 +16,7 @@ class LoginPage extends React.Component {
         }
         
         if(this.localStorage != null) {
+            console.log(this.localStorage);
             var cache_account = this.localStorage.getItem("account");
             var cache_pwd = this.localStorage.getItem("password");
             fetch('http://localhost:3000/LoginPage/auth', {
@@ -32,7 +33,7 @@ class LoginPage extends React.Component {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    navigate('/MainPage/MainPage')
+                    navigate('/MainPage/MainPage');
                 }
             })
         }
@@ -55,16 +56,22 @@ class LoginPage extends React.Component {
         .then(data => {
             if (data.success) {
                 if (this.localStorage != null) {
-                    this.localStorage.setItem("account", account)
-                    this.localStorage.setItem("account", password) 
+                    this.storeCache();
                 }
-                navigate('/MainPage/MainPage')
+                navigate('/MainPage/MainPage');
             } else {
-                alert('WRONG username or password')
-                navigate('/')
+                alert('WRONG username or password');
+                navigate('/');
             }
         })
     }
+
+    storeCache() {
+        console.log('stroing cred in cache');
+        this.localStorage.setItem("account", this.state.account);
+        this.localStorage.setItem("password", this.state.password); 
+    }
+
 
     handleReg (event, account, password)  {
         event.preventDefault()
@@ -84,8 +91,7 @@ class LoginPage extends React.Component {
             console.log(data);
             if (data.success) {
                 if (this.localStorage != null) {
-                    this.localStorage.setItem("account", account)
-                    this.localStorage.setItem("account", password) 
+                    this.storeCache()
                 }
                 console.log('success')
                 navigate('/MainPage/MainPage')

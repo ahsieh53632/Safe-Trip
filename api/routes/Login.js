@@ -10,15 +10,6 @@ const con = mysql.createConnection({
 });
 
 
-console.log('correct route');
-con.connect(function(err){
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('connected');
-    }
-  });
-
 
 /* GET home page. */
 router.post('/auth', function(req, res) {
@@ -34,12 +25,10 @@ router.post('/auth', function(req, res) {
     if (r.length > 0) {
       console.log('success')
       loggedin = true;
-      console.log(JSON.stringify({ "success": loggedin }));
-      con.close()
-      res.end(JSON.stringify({ "success": loggedin }));
+      console.log(JSON.stringify({ "success": loggedin}));
+      res.end(JSON.stringify({ "success": loggedin}));
     } else {
       loggedin = false;
-      con.close()
       res.end(JSON.stringify({ "success": loggedin }));
     }
   });
@@ -58,10 +47,8 @@ router.put('/reg', function(req, res) {
   con.query(query, [account, password], function(err, r, fields) {
     if (err) {
       console.log(err);
-      con.close()
       res.end(JSON.stringify({ "success": false }));
     } else {
-      con.close()
       res.end(JSON.stringify({ "success": true }));
     }
   });

@@ -19,9 +19,7 @@ const connection = mysql.createConnection({
   database: 'safe-trip'
 });
 
-connection.connect(function(err){
-  (err)? console.log(err) : console.log('connected')
-});
+
 
 
 // var insertleo = "INSERT INTO person (`account`, `password`, `name`, `phone`, `condition`, `address`) \

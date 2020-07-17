@@ -10,7 +10,6 @@ const con = mysql.createConnection({
 });
 
 
-console.log('correct route');
 con.connect(function(err){
     if (err) {
         console.log(err);
