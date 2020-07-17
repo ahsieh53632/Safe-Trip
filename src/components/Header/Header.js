@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => (
             color: `white`,
             textDecoration: `none`,
           }}
-        >
+        >Safe trip
           {siteTitle}
         </Link>
       </h1>
