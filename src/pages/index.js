@@ -11,7 +11,7 @@ const IndexPage = () => (
   <Layout>
     <LoginPage/>
     <div id="talk"></div>
-    <Check/>
+
    </Layout>
 )
 export default IndexPage

@@ -11,15 +11,5 @@ const Check=(props)=>{
     useEffect(()=>{
         checkID();
     },[props.ID]);
-    if(isRightID===true){
-        return(
-            document.getElementById("talk").append('correct!')
-        )
-    }
-    else
-        return(
-            document.getElementById("talk").append('wrong!')
-        )
-    
 }
 export default Check
