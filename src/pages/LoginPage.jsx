@@ -1,7 +1,7 @@
 import React from "react"
+import Header from "../components/Header/Header"
 import {link, navigate} from "gatsby"
 import Header from "/components/Header/Header"
-
 
 class LoginPage extends React.Component {
     localStorage;
@@ -43,11 +43,10 @@ class LoginPage extends React.Component {
         })
     }
 
-    
     handleReg (event, account, password)  {
         event.preventDefault()
         fetch('http://localhost:3000/LoginPage/reg', {
-            method: 'REG',
+            method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -62,7 +61,7 @@ class LoginPage extends React.Component {
             if (data.success) {
                 navigate('/MainPage')
             } else {
-                alert('username already exists')
+                alert()
             }
         })
     }
@@ -77,7 +76,6 @@ class LoginPage extends React.Component {
             <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
                 <button type="submit">log in</button>
             </form>
-            <button type="submit" >創建帳戶</button>
             </div>
         )
     }
