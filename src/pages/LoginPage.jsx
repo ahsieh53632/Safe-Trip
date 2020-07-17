@@ -46,7 +46,7 @@ class LoginPage extends React.Component {
     handleReg (event, account, password)  {
         event.preventDefault()
         fetch('http://localhost:3000/LoginPage/reg', {
-            method: 'REG',
+            method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -76,7 +76,9 @@ class LoginPage extends React.Component {
             <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
                 <button type="submit">log in</button>
             </form>
-            <button type="submit" >創建帳戶</button>
+            <form ref="form" onSubmit={(e) => this.handleReg(e, this.state.account, this.state.password)}>
+                <button type="submit" >創建帳戶</button>
+            </form>
             </div>
         )
     }

@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql')
 
-router.use('./register')
 const con = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -46,7 +45,7 @@ router.post('/auth', function(req, res) {
 });
 
 
-router.register('/reg', function(req, res) {
+router.put('/reg', function(req, res) {
   console.log('registering account');
   var account = req.body.account;
   var password = req.body.pwd;
