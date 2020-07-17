@@ -45,22 +45,5 @@ router.post('/auth', function(req, res) {
   
 });
 
-router.register('/reg', function(req, res) {
-  console.log('registering account');
-  var account = req.body.account;
-  var password = req.body.pwd;
-
-  var query = "INSERT INTO person (`account`, `password`, `name`, `phone`, `condition`, `address`) \
-                VALUES (?, ?, 'NONE', 'NONE', 'NORMAL', 'NONE');"
-
-  con.query(query, [account, password], function(err, r, fields) {
-    if (err) {
-      console.log(err);
-      res.end(JSON.stringify({ "success": false }));
-    } else {
-      console.log(JSON.stringify({ "success": true }));
-    }
-  });
-})
 
 module.exports = router;
