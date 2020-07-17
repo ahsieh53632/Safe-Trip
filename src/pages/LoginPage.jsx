@@ -42,6 +42,29 @@ class LoginPage extends React.Component {
         })
     }
 
+    handleReg (event, account, password)  {
+        event.preventDefault()
+        fetch('http://localhost:3000/LoginPage/reg', {
+            method: 'REG',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "account": account,
+                "pwd": password
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                navigate('/MainPage')
+            } else {
+                alert()
+            }
+        })
+    }
+
     render() {
         return(
             <div>
