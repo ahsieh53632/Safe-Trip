@@ -60,13 +60,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: "UMCP TASA Tour of Taiwan",
-                short_name: "Tour of Taiwan",
-                start_url: "/tour-of-taiwan",
+                name: "Safe trip",
+                short_name: "st",
+                start_url: "/",
                 background_color: "#663399",
                 theme_color: "#663399",
                 display: "standalone",
-                icon: "static/youyouka-512.png", // This path is relative to the root of the site.
+                icon: "static/dog.png", // This path is relative to the root of the site.
             },
         },
         "gatsby-plugin-offline",
