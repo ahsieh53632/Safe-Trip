@@ -34,9 +34,8 @@ class LoginPage extends React.Component {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if (data.success) {
-                navigate('/main-page')
+                navigate('/MainPage')
             } else {
                 navigate('/')
             }
@@ -54,7 +53,7 @@ class LoginPage extends React.Component {
             <div>輸入帳號</div>
             <input type="text" onChange={(e)=>{this.setState({account: e.target.value, password: this.state.password})}}/>
             <div>輸入密碼</div>
-            <input type="text" onChange={(e)=>{this.setState({account: this.state.account, password: e.target.value})}}/>
+            <input type="password" onChange={(e)=>{this.setState({account: this.state.account, password: e.target.value})}}/>
             <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
                 <button type="submit">log in</button>
             </form>
