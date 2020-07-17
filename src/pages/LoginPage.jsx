@@ -1,6 +1,6 @@
 import React from "react"
+import Header from "../components/Header/Header"
 import {link, navigate} from "gatsby"
-
 
 class LoginPage extends React.Component {
     localStorage;
@@ -42,7 +42,6 @@ class LoginPage extends React.Component {
         })
     }
 
-    
     handleReg (event, account, password)  {
         event.preventDefault()
         fetch('http://localhost:3000/LoginPage/reg', {
@@ -61,7 +60,7 @@ class LoginPage extends React.Component {
             if (data.success) {
                 navigate('/MainPage')
             } else {
-                alert('username already exists')
+                alert()
             }
         })
     }
@@ -69,6 +68,11 @@ class LoginPage extends React.Component {
     render() {
         return(
             <div>
+                <Header
+                absolute
+                color="transparent"
+                brand="123"  
+            />
             <div>輸入帳號</div>
             <input type="text" onChange={(e)=>{this.setState({account: e.target.value, password: this.state.password})}}/>
             <div>輸入密碼</div>
