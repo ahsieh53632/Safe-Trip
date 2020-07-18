@@ -28,20 +28,20 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function MyQRcode() {
+export default function AddID() {
   const classes = useStyles();
   return (
     <Card className={classes.textCenter}>
-      <CardHeader color="warning">
+      <CardHeader color="danger">
         <ThemeProvider theme={theme}>
           <Typography variant="body1">
-            <h2>Show My QRcode</h2>
+            <h2>Add encounter ID myself </h2>
           </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
         <h5 className={classes.cardTitle}>Special title treatment</h5>
-          <Link to="../../QRcodePage/CreateAccount">
+          <Link to="../../AddID/AddIDPage">
             <Button color="primary">GO!</Button>
           </Link>
       </CardBody>

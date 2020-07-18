@@ -28,14 +28,14 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function UpdatePlaceID(){
+export default function UpdatePhone(){
 
     const classes = useStyles();
 
-    const[PlaceID, setPlaceID] = React.useState(0);
+    const[Phone, setPhone] = React.useState(0);
 
-    const handlePlaceID = e =>{
-        setPlaceID(e.target.value);
+    const handlePhone = e =>{
+        setPhone(e.target.value);
     };
 
     return(
@@ -50,7 +50,7 @@ export default function UpdatePlaceID(){
                             backgroundColor: "#f9a825",
                         }}
                     >
-                        <h4>Current location ID</h4>
+                        <h4>New Phone</h4>
                     </CardHeader>
                     <CardBody>
                         <GridContainer
@@ -59,9 +59,9 @@ export default function UpdatePlaceID(){
                         >
                             <GridItem xs={8}>
                                 <TextField
-                                    id="Place ID"
-                                    label="Place ID"
-                                    onChange={handlePlaceID}
+                                    id="Phone"
+                                    label="Phone"
+                                    onChange={handlePhone}
                                 />
                             </GridItem>
                         </GridContainer>

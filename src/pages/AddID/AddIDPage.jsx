@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import {Link, navigate} from "gatsby";
 
-import UpdateName from "./UpdateName";
-import UpdateStreet from "./UpdateStreet";
-import UpdatePhone from "./UpdatePhone";
+//import funtion
+import AddPlaceID from "./AddPlaceID";
+import AddOPID from "./AddOPID";
 
 import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
@@ -17,10 +17,8 @@ import { Typography } from "@material-ui/core"
 import theme from "../../components/theme"
 
 import image from "assets/img/bg.jpg";
-import UpdatePlaceID from "./UpdatePhone";
 
-
-class UpdatePage extends Component{
+class AddIDPage extends Component{
 
     constructor(props){
         super(props);
@@ -43,11 +41,10 @@ class UpdatePage extends Component{
                 alignItems: "center",
               }}>
 
-            <UpdateName/>
+{/* funtions */}
+            <AddPlaceID/>
 
-            <UpdateStreet/>
-
-            <UpdatePhone/>
+            <AddOPID/>
 
             <Link to="../../MainPage/MainPage">
                 <Button 
@@ -74,4 +71,4 @@ class UpdatePage extends Component{
     }
 }
 
-export default withStyles(loginPageStyle)(UpdatePage);
+export default withStyles(loginPageStyle)(AddIDPage);

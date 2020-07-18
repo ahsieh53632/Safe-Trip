@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
+import AddID from "./AddID";
 
 import Footer from "../../components/Footer/Footer.jsx";
 
@@ -49,6 +50,8 @@ class MainPage extends Component{
 
           <UpdateInfo/>
           {/* <Test/> */}
+
+          <AddID/>
 
           <Footer/>
 
