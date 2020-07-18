@@ -15,21 +15,12 @@ class QRcodeID extends Component{
             URL:"http://localhost:8000/scanCode?info={ \"type\": 1, \"locationid\": here,\"otherpersonid\": }"
         }
       }
-
-      combine(){
-        this.setState({URL:this.state.URL+this.props.sendID});
-      }
-
-      componentDidMount(){
-          this.combine();
-
-      }
     
     render() {
            return (
                 <div>
                 <MyQRcode value={this.props.sendID}></MyQRcode>
-                <div>{this.props.sendID}</div>
+           <div>生成網址:{this.props.sendID}</div>
                 </div>
             )
 
