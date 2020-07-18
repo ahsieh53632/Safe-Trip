@@ -41,6 +41,7 @@ Node.js <br/>
     - ###### 註: 目前只有前端 連結api 部分沒有做
   - Alert: 若最近有接觸過疫情, 會在MainPage 顯示一個提醒
   - MainPage: 主頁面
+  - ViewInfo: 檢視個人資料
 
 # Test QRCODE api calls locally:
 ## 人與人見面 (or Uber, AirBnb):
