@@ -12,7 +12,7 @@ class QRcodeID extends Component{
     constructor(props) {
         super(props);
         this.state={
-            URL:"http://localhost:8000/scanCode?info={ \"type\": 1, \"locationid\": here,\"otherpersonid\": }"
+            
         }
       }
     
@@ -23,9 +23,6 @@ class QRcodeID extends Component{
            <div>生成網址:{this.props.sendID}</div>
                 </div>
             )
-
-           
-        
     }
 }
 
