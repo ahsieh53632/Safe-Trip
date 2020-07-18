@@ -1,5 +1,5 @@
 # Safe-Trip: 放心出遊!:
-### English version README: README_eng.md
+### English version README: check README_eng.md
 免安裝, 不論出遊還是搭Uber 只需透過手機內建相機掃描QRCODE就能隨時確保自己遠離疫情
 
 
