@@ -8,6 +8,7 @@ import { navigate } from "@reach/router";
 
 const ScanQR = ({ search }) => {
     console.log('hi');
+  let isMounted = true;
   const { info } = search;
   console.log(info)
   var objs = JSON.parse(info);
@@ -42,11 +43,11 @@ const ScanQR = ({ search }) => {
             console.log(data);
             if (data.success) {
                 alert('successfully ADDED to beento table')
-                console.log('success')
-                navigate('/MainPage/MainPage')
+                console.log('success');
+                window.location = '/MainPage/MainPage'
             } else {
                 alert('FAILED! please relogin or register');
-                navigate('/')
+                window.location = '/'
             }
         })
   } else {
@@ -69,11 +70,13 @@ const ScanQR = ({ search }) => {
             console.log(data);
             if (data.success) {
               alert('successfully ADDED to encounter table')
-              console.log('success')
-              navigate('/MainPage/MainPage')
+              console.log('success');
+              isMounted = false;
+              window.location = '/MainPage/MainPage'
             } else {
               alert('FAILED! please relogin or register');
-              navigate('/')
+              isMounted = false;
+              window.location = '/LoginPage'
             }
         })
   }
