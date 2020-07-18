@@ -42,7 +42,7 @@ Node.js <br/>
   - Alert: 若最近有接觸過疫情, 會在MainPage 顯示一個提醒
   - MainPage: 主頁面
 
-# Test QRCODE updates locally:
+# Test QRCODE api calls locally:
 ## 人與人見面 (or Uber, AirBnb):
  - 前往 /scanCode?info={"type": "encounter", "otherpersonid": "接觸人帳號", "locationid": "位置id (在資料庫上的location)", "date": "日期"}
 ## 景點:
