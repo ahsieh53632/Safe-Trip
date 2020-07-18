@@ -69,7 +69,11 @@ const ScanQR = ({ search }) => {
         .then(data => {
             console.log(data);
             if (data.success) {
-              alert('successfully ADDED to encounter table')
+              if (data.cond === "RISKY") {
+                alert("This person is at RISK!!!!!")
+              } else {
+                alert('SAFE! successfully ADDED to encounter table')
+              }
               console.log('success');
               isMounted = false;
               window.location = '/MainPage/MainPage'

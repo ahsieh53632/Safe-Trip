@@ -8,7 +8,6 @@ var mysql = require('mysql');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var LoginRouter = require('./routes/Login');
-var MainPageRouter = require('./routes/MainPage')
 var CheckRouter = require('./routes/CheckPage')
 var QRRouter = require('./routes/QRPage')
 var uuid = require('uuid');
@@ -50,8 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/LoginPage', LoginRouter);
-app.use('/MainPage', MainPageRouter);
-app.use('/MainPage/CheckPage/CheckPage', MainPageRouter);
+app.use('/CheckPage', CheckRouter);
 app.use('/scanCode', QRRouter)
 
 // catch 404 and forward to error handler

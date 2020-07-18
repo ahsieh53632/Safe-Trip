@@ -10,6 +10,16 @@ const con = mysql.createConnection({
 });
 
 
+// var q3 = "SELECT person.condition FROM person WHERE person.account = ?;"
+// con.query(q3, ["alex"], function(err, r, fields) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(r[0].condition);
+//     console.log('success');
+//   }
+// });
+
 router.post('/beento', function(req, res) {
   var pid = req.body.account;  
   var lid = req.body.locationId;
@@ -45,7 +55,24 @@ router.put('/encounter', function(req, res) {
       console.log(err);
       res.end(JSON.stringify({ "success": false }));
     } else {
-      res.end(JSON.stringify({ "success": true }));
+
+      var q3 = "SELECT person.condition FROM person WHERE person.account = ?;"
+      con.query(q3, [other], function(err, r, fields) {
+        if (err) {
+          console.log(err);
+          res.end(JSON.stringify({ "success": false }));
+        } else {
+          var cond = r[0].condition;
+          console.log(cond);
+          if (cond === "INFECTED" || cond === "ATRISK") {
+            res.end(JSON.stringify({ "success": true, "cond": "RISKY"}));
+          } else {
+            res.end(JSON.stringify({ "success": true, "cond": "SAFE"}));
+          }
+          
+          console.log('success');
+        }
+      })
     }
   })});
 module.exports = router;
