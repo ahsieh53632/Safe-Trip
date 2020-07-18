@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import {createMemoryHistory} from "history";
 import {Route, HashRouter as Router, Switch} from "react-router-dom";
 import ReactDOM from 'react-dom';
@@ -13,17 +13,37 @@ import 'typeface-roboto-slab';
 
 import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";
-import ScanQR from "./scanCode.jsx"
 
 export default () => (
   <Router>
     <Switch>
       <Route exact path="/" component={LoginPage} />
       <Route path="/scanCode/:id">
-        <ScanQR />
       </Route>
     </Switch>
   </Router>
 );
 
+// class Index extends React.Component {
 
+//   render () {
+//     var current_url = window.location.href;
+//     console.log(current_url);
+//     const regex = /\/scanCode\/(.*)\/(.*)$/;
+
+//     var result = current_url.match(regex);
+
+//     if (result.length > 0) {
+//       console.log('validating');
+//       <ScanQR />
+//     } else {
+//       navigate('./MainPage/MainPage')
+//     }
+
+//     return (
+//       <h4>Ther's probably an erorr</h4>
+//     )
+//   }
+// }
+
+// export default Index;

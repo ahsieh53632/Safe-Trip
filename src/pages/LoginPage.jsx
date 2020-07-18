@@ -51,7 +51,7 @@ class LoginPage extends React.Component {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    navigate('/MainPage/MainPage');
+                    //navigate('/MainPage/MainPage');
                 }
             })
         }
@@ -59,6 +59,8 @@ class LoginPage extends React.Component {
 
     handleSubmit (event, account, password)  {
         event.preventDefault()
+        console.log(account);
+        console.log(password);
         fetch('http://localhost:3000/LoginPage/auth', {
             method: 'POST',
             headers: {
@@ -161,7 +163,7 @@ class LoginPage extends React.Component {
                         }}
                         inputProps={{
                           type: "text",
-                          onChange: (e) => {this.setState({account: this.state.account, password: e.target.value})},
+                          onChange: (e) => {this.setState({account: e.target.value, password: this.state.password})},
                           endAdornment: (
                             <InputAdornment position="end">
                               <LockOutlined/>
@@ -177,8 +179,8 @@ class LoginPage extends React.Component {
                           fullWidth: true
                         }}
                         inputProps={{
-                          type: "password",
-                          onChange: (e) => (e)=>{this.setState({account: this.state.account, password: e.target.value})},
+                          type: "text",
+                          onChange: (e) => {this.setState({account: this.state.account, password: e.target.value})},
                           endAdornment: (
                             <InputAdornment position="end">
                               <LockOutlined/>
