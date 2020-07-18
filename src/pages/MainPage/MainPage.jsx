@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {Link, navigate} from "gatsby";
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
-
 import Button from "../../components/CustomButtons/Button.jsx";
 // import image from "assets/img/bg7.jpg";
 
@@ -18,6 +17,7 @@ class MainPage extends Component{
             Check: false,
             MyQRcode: false,
             UpadteInfo: false,
+            OnClickMyQRcode:false,
         };
 
         // this.ScanButtom=this.ScanButtom.bind(this);
@@ -25,6 +25,7 @@ class MainPage extends Component{
         // this.MyQRcodeButtom=this.MyQRcodeButtom.bind(this);
         // this.UpdateButtom=this.UpdateButtom.bind(this);
     }
+
 
     // ScanButtom(){
     //     navigate("/MainPage/Scan")
@@ -57,8 +58,8 @@ class MainPage extends Component{
                 </Button>
                 </Link>
 
-                <Link to="/MainPage/MyQRcode">
-                <Button color="primary">
+                <Link to="/MainPage/GetQRcode">
+                <Button color="primary" >
                 顯示我的QRcode
                 </Button>
                 </Link>

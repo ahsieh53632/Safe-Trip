@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 
 const Scan = () => (
-  <p></p>
+  <p>123</p>
 )
 
 export default Scan

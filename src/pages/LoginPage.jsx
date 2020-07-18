@@ -1,8 +1,5 @@
 import React from "react"
-import Header from "../components/Header/Header"
 import {link, navigate} from "gatsby"
-
-import MainPage from "./MainPage/MainPage.jsx"
 
 
 class LoginPage extends React.Component {
@@ -100,11 +97,9 @@ class LoginPage extends React.Component {
             }
         })
     }
-
     render() {
         return(
-            <div>
-            <div>輸入帳號</div>
+            <div>      
             <input type="text" onChange={(e)=>{this.setState({account: e.target.value, password: this.state.password})}}/>
             <div>輸入密碼</div>
             <input type="password" onChange={(e)=>{this.setState({account: this.state.account, password: e.target.value})}}/>
