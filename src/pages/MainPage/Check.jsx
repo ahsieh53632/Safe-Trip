@@ -35,12 +35,12 @@ export default function Check() {
       <CardHeader color="danger">
         <ThemeProvider theme={theme}>
           <Typography variant="body1">
-            <h2>Check if I'm in Risk</h2>
+            <h2>AtRisk</h2>
           </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h5 className={classes.cardTitle}>Special title treatment</h5>
+        <h5 className={classes.cardTitle}>See when and where you have encoutered any Infected person</h5>
           <Link to="../../CheckPage/CheckPage">
             <Button color="primary">GO!</Button>
           </Link>

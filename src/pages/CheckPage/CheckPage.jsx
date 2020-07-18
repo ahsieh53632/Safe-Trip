@@ -3,6 +3,11 @@ import {Link, navigate} from "gatsby";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "../../components/CustomButtons/Button.jsx";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+import {
+    ThemeProvider
+  } from "@material-ui/styles"
+  import { Typography } from "@material-ui/core"  
+  import theme from "../../components/theme"
 
 
 class CheckPage extends Component{
@@ -41,6 +46,17 @@ class CheckPage extends Component{
             <div>
                 <h2>Infected or At rist individuals you had contact with</h2>
                 {data.map(r => <ul><li>Location: {r.name}</li><li>Date: {new Date(r.date).toLocaleDateString([],{ year: 'numeric', month: 'long', day: 'numeric' })}</li></ul>)}
+                <Link to="../../MainPage/MainPage">
+                <Button 
+                color="primary"
+                >
+                <ThemeProvider theme={theme}>
+                    <Typography variant="body1">
+                        Previous Page
+                    </Typography>
+                </ThemeProvider>
+                </Button>
+            </Link>
             </div>
         )
         

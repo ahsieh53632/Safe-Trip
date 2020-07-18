@@ -23,6 +23,7 @@ import headerLinksStyle from "assets/jss/material-kit-react/components/headerLin
 
 import ScheduleDialog from "pages/SchedulePage/ScheduleDialog.jsx";
 import MapDialog from "pages/MapPage/MapDialog.jsx";
+import WarningSign from "pages/MainPage/WarningSign.jsx"
 
 function HeaderLinks({ ...props }) {
     const { classes } = props;
@@ -34,12 +35,18 @@ function HeaderLinks({ ...props }) {
                     Home
                 </Link>
             </ListItem> */}
-            <ListItem className={classes.listItem}>
+
+            {/* <ListItem className={classes.listItem}>
                 <ScheduleDialog />
-            </ListItem>
-            <ListItem className={classes.listItem}>
+            </ListItem> */}
+            {/* <ListItem className={classes.listItem}>
                 <MapDialog />
+            </ListItem> */}
+
+            <ListItem className={classes.listItem}>
+                <WarningSign/>
             </ListItem>
+            
         </List>
     );
 }

@@ -35,12 +35,12 @@ export default function AddID() {
       <CardHeader color="danger">
         <ThemeProvider theme={theme}>
           <Typography variant="body1">
-            <h2>Add encounter ID myself </h2>
+            <h2>Add encounter ID</h2>
           </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h5 className={classes.cardTitle}>Special title treatment</h5>
+        <h5 className={classes.cardTitle}>Manually Insert Other Person or Location ID if you didn't scan their QRcode</h5>
           <Link to="../../AddID/AddIDPage">
             <Button color="primary">GO!</Button>
           </Link>

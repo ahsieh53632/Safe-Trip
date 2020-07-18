@@ -35,12 +35,12 @@ export default function UpadteInfo() {
       <CardHeader color="primary">
         <ThemeProvider theme={theme}>
           <Typography variant="body1">
-            <h2>Upadte my Info</h2>
+            <h2>Update Info</h2>
           </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h5 className={classes.cardTitle}>Special title treatment</h5>
+        <h5 className={classes.cardTitle}>Update Your phone, address, and name </h5>
           <Link to="../../UpdatePage/UpdatePage">
             <Button color="primary">GO!</Button>
           </Link>

@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 // import {Link, navigate} from "gatsby";
 
+import WarningSign from "./WarningSign"
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
 import AddID from "./AddID";
 
+import Header from "components/Header/Header.jsx";
+import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
@@ -29,6 +32,16 @@ class MainPage extends Component{
 
   render() {
       return(
+        <div>
+          <Header
+            brand="Safe-Trip"
+            rightLinks={<HeaderLinks />}
+            fixed
+            changeColorOnScroll={{
+            height: 100,
+            color: "white",
+          }}/>
+
         <div
           style={{
             backgroundImage: "url(" + image + ")",
@@ -44,18 +57,20 @@ class MainPage extends Component{
             alignItems: "center",
           }}
         >
+          {/* <WarningSign/> */}
+
           <Check/>
 
           <MyQRcode/>
 
           <UpdateInfo/>
-          {/* <Test/> */}
 
           <AddID/>
 
           <Footer/>
 
         </div>
+        </div> 
     )
   }
 }
