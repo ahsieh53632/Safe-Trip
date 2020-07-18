@@ -26,20 +26,6 @@ module.exports = {
             },
           }
         },
-        {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
-            options: {
-              fonts: [
-                {
-                  family: `Roboto Mono`,
-                  variants: [`400`, `700`]
-                },
-                {
-                  family: `Roboto`
-                },
-              ],
-            },
-        },
         "gatsby-plugin-flow",
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
