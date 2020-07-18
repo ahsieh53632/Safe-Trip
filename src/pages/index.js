@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import {createMemoryHistory} from "history";
 import {Route, Router, Switch} from "react-router-dom";
+import 'typeface-roboto'
 
 import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";

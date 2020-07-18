@@ -6,7 +6,7 @@ const signupPageStyle = {
     zIndex: "2",
     position: "relative",
     paddingTop: "20vh",
-    color: "#FFFFFF"
+    color: "#FFFFFF",
   },
   cardHidden: {
     opacity: "0",
@@ -67,7 +67,8 @@ const signupPageStyle = {
     fontSize: "20px"
   },
   divider: {
-    marginTop: "30px",
+    font: "Arial",
+    marginTop: "20px",
     marginBottom: "0px",
     textAlign: "center"
   },

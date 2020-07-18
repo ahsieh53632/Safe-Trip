@@ -6,8 +6,40 @@ module.exports = {
     plugins: [
         "gatsby-plugin-resolve-src",
         "gatsby-plugin-react-helmet",
-        "gatsby-plugin-sass",
-        "gatsby-plugin-material-ui",
+        {
+        resolve: `gatsby-plugin-material-ui`,
+        options: {
+            webFontsConfig: {
+              fonts: {
+                
+                google: [
+                  {
+                    family: `Montserrat`,
+                    variants: [`300`, `400`, `500`],
+                  },
+                  {
+                      family: `Roboto`
+                  }
+                ],
+              },
+
+            },
+          }
+        },
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+              fonts: [
+                {
+                  family: `Roboto Mono`,
+                  variants: [`400`, `700`]
+                },
+                {
+                  family: `Roboto`
+                },
+              ],
+            },
+        },
         "gatsby-plugin-flow",
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
@@ -57,6 +89,7 @@ module.exports = {
                 ],
             },
         },
+        "gatsby-plugin-sass",
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -69,6 +102,5 @@ module.exports = {
                 icon: "static/dog.png", // This path is relative to the root of the site.
             },
         },
-        "gatsby-plugin-offline",
-    ],
-};
+        "gatsby-plugin-offline"],
+        };
