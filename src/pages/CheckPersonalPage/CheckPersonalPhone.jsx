@@ -1,9 +1,7 @@
 import React from "react";
 import {Link, navigate} from "gatsby";
-
 import makeStyles from '@material-ui/styles/makeStyles/makeStyles.js';
 import TextField from '@material-ui/core/TextField';
-
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Card from "../../components/Card/Card.jsx";
@@ -13,8 +11,9 @@ import CardFooter from "../../components/Card/CardFooter.jsx";
 import {ThemeProvider} from "@material-ui/styles"
 import { Typography } from "@material-ui/core"  
 import theme from "../../components/theme"
-
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
+
+import GetPersonalPhone from "./GetPersonalPhone.jsx"
 
 const styles = {
     cardTitle,
@@ -26,21 +25,11 @@ const styles = {
     },
   };
 
-
-
 const useStyles = makeStyles(styles);
 
-
-const UpdateName= (props)=>{
-  
+export default function UpdateName(){
 
     const classes = useStyles();
-
-    const[Name, setName] = React.useState("");
-
-    const handleName = e =>{
-        setName(e.target.value)
-    };
 
     return(
     <div>
@@ -54,7 +43,7 @@ const UpdateName= (props)=>{
                             backgroundColor: "#f9a825",
                         }}
                     >
-                        <h4>New User Name</h4>
+                        <h4>Phonenumber</h4>
                     </CardHeader>
                     <CardBody>
                         <GridContainer
@@ -62,11 +51,7 @@ const UpdateName= (props)=>{
                             justify="center"
                         >
                             <GridItem xs={8}>
-                                <TextField
-                                    id="New user name"
-                                    label="New user name"
-                                    onChange={handleName}
-                                />
+                    <GetPersonalPhone/>
                             </GridItem>
                         </GridContainer>
                     </CardBody>
@@ -76,4 +61,3 @@ const UpdateName= (props)=>{
     </div>
     );
 }
-export default UpdateName;

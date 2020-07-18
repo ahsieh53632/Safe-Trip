@@ -1,15 +1,7 @@
 import React, { Component } from "react";
 import {Link, navigate} from "gatsby";
-
-import UpdateName from "./UpdateName";
-import UpdateStreet from "./UpdateStreet";
-import UpdatePhone from "./UpdatePhone";
-
 import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import Header from "components/Header/Header.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
-
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
 import {
@@ -17,11 +9,17 @@ import {
   } from "@material-ui/styles"
 import { Typography } from "@material-ui/core"  
 import theme from "../../components/theme"
-
 import image from "assets/img/bg.jpg";
 
+import CheckPersonalname from"./CheckPersonalname.jsx"
+import CheckPersonalPhone from"./CheckPersonalPhone.jsx"
+import CheckPersonalStreet from"./CheckPersonalStreet.jsx"
 
-class UpdatePage extends Component{
+
+
+
+
+class CheckPersonalPage extends Component{
 
     constructor(props){
         super(props);
@@ -29,15 +27,6 @@ class UpdatePage extends Component{
 
     render(){
         return(
-            <div>
-                <Header
-                    brand="Safe-Trip"
-                    rightLinks={<HeaderLinks />}
-                    fixed
-                    changeColorOnScroll={{
-                    height: 100,
-                    color: "white",
-                }}/>
             <div
               style={{
                 backgroundImage: "url(" + image + ")",
@@ -53,11 +42,11 @@ class UpdatePage extends Component{
                 alignItems: "center",
               }}>
 
-            <UpdateName/>
+            <CheckPersonalname/>
 
-            <UpdateStreet/>
+            <CheckPersonalPhone/>
 
-            <UpdatePhone/>
+            <CheckPersonalStreet/>
 
             <Link to="../../MainPage/MainPage">
                 <Button 
@@ -80,9 +69,8 @@ class UpdatePage extends Component{
             </Button>
             <Footer/>
         </div>
-        </div>
         )
     }
 }
 
-export default withStyles(loginPageStyle)(UpdatePage);
+export default withStyles(loginPageStyle)(CheckPersonalPage);

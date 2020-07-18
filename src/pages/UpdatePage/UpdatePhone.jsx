@@ -36,6 +36,7 @@ export default function UpdatePhone(){
 
     const handlePhone = e =>{
         setPhone(e.target.value);
+        console.log(Phone);
     };
 
     return(

@@ -14,6 +14,7 @@ import {ThemeProvider} from "@material-ui/styles"
 import { Typography } from "@material-ui/core"  
 import theme from "../../components/theme"
 
+import GetPersonalStreet from "../CheckPersonalPage/CheckPersonalStreet.jsx"
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
 
 const styles = {

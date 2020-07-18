@@ -5,6 +5,8 @@ import {Link, navigate} from "gatsby";
 import AddPlaceID from "./AddPlaceID";
 import AddOPID from "./AddOPID";
 
+import Header from "components/Header/Header.jsx";
+import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 
@@ -26,6 +28,15 @@ class AddIDPage extends Component{
 
     render(){
         return(
+            <div>
+            <Header
+            brand="Safe-Trip"
+            rightLinks={<HeaderLinks />}
+            fixed
+            changeColorOnScroll={{
+            height: 100,
+            color: "white",
+            }}/>
             <div
               style={{
                 backgroundImage: "url(" + image + ")",
@@ -66,6 +77,7 @@ class AddIDPage extends Component{
                 </ThemeProvider>
             </Button>
             <Footer/>
+        </div>
         </div>
         )
     }

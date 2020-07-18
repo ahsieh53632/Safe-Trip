@@ -90,7 +90,8 @@ class MainPage extends Component{
             alignItems: "center",
           }}
         >
-          {/* <WarningSign/> */}
+          
+          <CheckPersonal/>
 
           <Check/>
 
