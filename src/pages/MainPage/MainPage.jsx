@@ -4,16 +4,11 @@ import React, { Component } from "react";
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
-// import Test from "./Test.jsx"
 
 import Footer from "../../components/Footer/Footer.jsx";
-// import Header from "../../components/Header/Header";
-// import HeaderLinks from "../../components/Header/HeaderLinks";
-// import Button from "../../components/CustomButtons/Button.jsx";
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
-// import { Typography } from "@material-ui/core"
 
 import image from "assets/img/bg.jpg";
 
