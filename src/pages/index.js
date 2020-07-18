@@ -1,20 +1,27 @@
 import React from "react"
 import { Link } from "gatsby"
 import {createMemoryHistory} from "history";
-import {Route, Router, Switch} from "react-router-dom";
+import {Route, HashRouter as Router, Switch} from "react-router-dom";
+import ReactDOM from 'react-dom';
 import 'typeface-roboto'
+
+import createBrowserHistory from 'history/createBrowserHistory';
+import "assets/scss/material-kit-react.scss?v=1.4.0";
+import 'typeface-roboto';
+import 'typeface-roboto-slab';
+
 
 import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";
-let hist = createMemoryHistory();
+import ScanQR from "./scanCode.jsx"
 
 export default () => (
-  <Router history={hist}>
+  <Router>
     <Switch>
-      <Route path="/" component={LoginPage} />
-      <Route path="/MainPage" component={MainPage} />
-      {/*<Route path="/map-page" component={MapPage} />
-      <Route path="/main-page" component={MainPage} /> */}
+      <Route exact path="/" component={LoginPage} />
+      <Route path="/scanCode/:id">
+        <ScanQR />
+      </Route>
     </Switch>
   </Router>
 );
