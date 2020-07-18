@@ -19,7 +19,7 @@ const headerStyle = {
     borderRadius: "3px",
     padding: "0.625rem 0",
     marginBottom: "20px",
-    color: "#555",
+    color: "#f73378",
     width: "100%",
     backgroundColor: "#fff",
     boxShadow:

@@ -32,30 +32,10 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                UMCP TASA
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://umcptasa.org/pages/about-us.html"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
+                Safe trip
               </a>
             </ListItem>
           </List>
-        </div>
-        <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://umcptasa.org"
-            className={aClasses}
-            target="_blank"
-          >
-            UMCP TASA
-          </a>{" "}
         </div>
       </div>
     </footer>

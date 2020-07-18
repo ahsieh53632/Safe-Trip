@@ -1,10 +1,22 @@
 import React from "react"
-import Header from "../components/Header/Header"
 import {link, navigate} from "gatsby"
 
+
+import withStyles from "@material-ui/core/styles/withStyles";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import LockOutlined from "@material-ui/icons/LockOutlined";
 import MainPage from "./MainPage/MainPage.jsx"
+import loginPageStyle from "assets/jss/material-kit-react/views/loginPage.jsx";
+import Button from "components/CustomButtons/Button.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
+import CustomInput from "components/CustomInput/CustomInput.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
+import Card from "components/Card/Card.jsx";
+import CardBody from "components/Card/CardBody.jsx";
+import CardHeader from "components/Card/CardHeader.jsx";
+import CardFooter from "components/Card/CardFooter.jsx";
 
-
+import image from "assets/img/1.jpg";
 class LoginPage extends React.Component {
     localStorage;
     state = {account: "", password: ""}
@@ -13,6 +25,7 @@ class LoginPage extends React.Component {
         this.localStorage = null;
         if (typeof window !== "undefined") {
             this.localStorage = window.localStorage;
+            console.log(this.localStorage);
         }
         
         if(this.localStorage != null) {
@@ -33,7 +46,7 @@ class LoginPage extends React.Component {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    navigate('/MainPage/MainPage');
+                    //navigate('/MainPage/MainPage');
                 }
             })
         }
@@ -65,6 +78,16 @@ class LoginPage extends React.Component {
             }
         })
     }
+
+    componentDidMount() {
+        // we add a hidden class to the card and after 700 ms we delete it and the transition appears
+        setTimeout(
+          function() {
+            this.setState({ cardAnimation: "" });
+          }.bind(this),
+          700
+        );
+      }
 
     storeCache() {
         console.log('stroing cred in cache');
@@ -101,22 +124,76 @@ class LoginPage extends React.Component {
         })
     }
 
+
+
     render() {
+        const { classes, ...rest } = this.props;
         return(
-            <div>
-            <div>輸入帳號</div>
-            <input type="text" onChange={(e)=>{this.setState({account: e.target.value, password: this.state.password})}}/>
-            <div>輸入密碼</div>
-            <input type="password" onChange={(e)=>{this.setState({account: this.state.account, password: e.target.value})}}/>
-            <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
-                <button type="submit">log in</button>
-            </form>
-            <form ref="form2" onSubmit={(e) => this.handleReg(e, this.state.account, this.state.password)}>
-                <button type="submit">register</button>
-            </form>
+                <div
+                    className={classes.pageHeader}
+                    style={{
+                backgroundImage: "url(" + image + ")",
+                    backgroundSize: "cover",
+                    backgroundPosition: "top center"
+                }}
+                >
+                <div className={classes.container}>
+                <GridContainer>
+                <Card className={classes[this.state.cardAnimation]}>
+                <GridItem>
+                    <CardHeader color="warning" className={classes.cardHeader}>
+                      <h4>Safe Trip login</h4>
+                    </CardHeader>
+                    <p className={classes.divider}></p>
+                    <CardBody>
+                    <CustomInput 
+                        labelText="帳號"
+                        id="account"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        inputProps={{
+                          type: "password",
+                          onChange: (e) => {this.setState({account: this.state.account, password: e.target.value})},
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <LockOutlined/>
+                            </InputAdornment>
+                          ),
+                        }}
+                      />
+                       <CustomInput
+                        labelText="密碼"
+                        id="pwd"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        inputProps={{
+                          type: "password",
+                          onChange: (e) => (e)=>{this.setState({account: this.state.account, password: e.target.value})},
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <LockOutlined/>
+                            </InputAdornment>
+                          ),
+                        }}
+                        />
+                    </CardBody>
+                    <CardFooter>
+                    <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
+                        <Button type="submit">log in</Button>
+                    </form>
+                    <form ref="form2" onSubmit={(e) => this.handleReg(e, this.state.account, this.state.password)}>
+                        <Button type="submit">register</Button>
+                    </form>
+                    </CardFooter>
+                </GridItem>
+                </Card>
+                </GridContainer>
+                </div>
             </div>
         )
+      }
     }
     
-}
-export default LoginPage
+export default withStyles(loginPageStyle)(LoginPage);
