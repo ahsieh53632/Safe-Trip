@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import {Link, navigate} from "gatsby";
+
+import Header from "components/Header/Header.jsx";
+import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import NoIconHeader from "components/Header/NoIconHeader.jsx";
 import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
@@ -52,6 +56,15 @@ class CheckPersonalPage extends Component{
 
     render(){
         return(
+            <div>
+                <Header
+                    brand="Safe-Trip"
+                    rightLinks={<NoIconHeader />}
+                    fixed
+                    changeColorOnScroll={{
+                    height: 100,
+                    color: "white",
+                    }}/>
             <div
               style={{
                 backgroundImage: "url(" + image + ")",
@@ -93,6 +106,7 @@ class CheckPersonalPage extends Component{
                 </ThemeProvider>
             </Button>
             <Footer/>
+        </div>
         </div>
         )
     }

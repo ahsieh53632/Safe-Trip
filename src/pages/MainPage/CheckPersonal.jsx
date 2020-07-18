@@ -2,6 +2,7 @@ import React from "react";
 // material-ui components
 import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
 // core components
+
 import Card from "../../components/Card/Card.jsx";
 import CardBody from "../../components/Card/CardBody.jsx";
 import CardHeader from "../../components/Card/CardHeader.jsx";
@@ -32,7 +33,7 @@ export default function Check() {
   const classes = useStyles();
   return (
     <Card className={classes.textCenter}>
-      <CardHeader color="danger">
+      <CardHeader color="primary">
         <ThemeProvider theme={theme}>
           <Typography variant="body1">
             <h2>Check personal data</h2>
@@ -40,7 +41,7 @@ export default function Check() {
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h5 className={classes.cardTitle}>Special title treatment</h5>
+        <h5 className={classes.cardTitle}>Check your personal data</h5>
           <Link to="../../CheckPersonalPage/CheckPersonalPage">
             <Button color="primary">GO!</Button>
           </Link>

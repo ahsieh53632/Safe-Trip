@@ -9,6 +9,7 @@ import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import NoIconHeader from "components/Header/NoIconHeader.jsx";
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -32,7 +33,7 @@ class UpdatePage extends Component{
             <div>
                 <Header
                     brand="Safe-Trip"
-                    rightLinks={<HeaderLinks />}
+                    rightLinks={<NoIconHeader />}
                     fixed
                     changeColorOnScroll={{
                     height: 100,
