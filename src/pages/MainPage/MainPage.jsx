@@ -1,83 +1,65 @@
 import React, { Component } from "react";
-import {Link, navigate} from "gatsby";
-import withStyles from "@material-ui/core/styles/withStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Button from "../../components/CustomButtons/Button.jsx";
-// import image from "assets/img/bg7.jpg";
+// import {Link, navigate} from "gatsby";
+
+import Check from "./Check";
+import MyQRcode from "./MyQRcode";
+import UpdateInfo from "./UpdateInfo";
+// import Test from "./Test.jsx"
+
+import Footer from "../../components/Footer/Footer.jsx";
+// import Header from "../../components/Header/Header";
+// import HeaderLinks from "../../components/Header/HeaderLinks";
+// import Button from "../../components/CustomButtons/Button.jsx";
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+import withStyles from "@material-ui/core/styles/withStyles";
+// import { Typography } from "@material-ui/core"
+
+import image from "assets/img/bg.jpg";
+
 
 class MainPage extends Component{
-      state;
+    state;
 
-    constructor(props){
-        super(props);
-        this.state = {
-            Scan: false,
-            Check: false,
-            MyQRcode: false,
-            UpadteInfo: false,
-            OnClickMyQRcode:false,
-        };
+  constructor(props){
+      super(props);
+      this.state = {
+          Scan: false,
+          Check: false,
+          MyQRcode: false,
+          UpadteInfo: false,
+      };
+  }
 
-        // this.ScanButtom=this.ScanButtom.bind(this);
-        // this.CheckButtom=this.CheckButtom.bind(this);
-        // this.MyQRcodeButtom=this.MyQRcodeButtom.bind(this);
-        // this.UpdateButtom=this.UpdateButtom.bind(this);
-    }
+  render() {
+      return(
+        <div
+          style={{
+            backgroundImage: "url(" + image + ")",
+            backgroundSize: "cover",
+            backgroundPosition: "top center",
+            height: "auto",
+            display: "inherit",
+            position: "relative",
+            margin: "0",
+            padding: "0",
+            paddingTop: "15vh",
+            border: "0",
+            alignItems: "center",
+          }}
+        >
+          <Check/>
 
+          <MyQRcode/>
 
-    // ScanButtom(){
-    //     navigate("/MainPage/Scan")
-    // }
+          <UpdateInfo/>
+          {/* <Test/> */}
 
-    // CheckButtom(){
-    //     navigate("/MainPage/Check")
-    // }
+          <Footer/>
 
-    // MyQRcodeButtom(){
-    //     navigate("/MainPage/MyQRcode")
-    // }
-
-    // UpdateButtom(){
-    //     navigate("/MainPage/UpdateInfo")
-    // }
-
-    render() {
-        return(
-            <div>
-                <Link to="/MainPage/Scan">
-                <Button color="primary">
-                掃描QRcode
-                </Button>
-                </Link>
-
-                <Link to="/MainPage/Check">
-                <Button color="primary">
-                檢查我的路程
-                </Button>
-                </Link>
-
-                <Link to="/MainPage/GetQRcode">
-                <Button color="primary" >
-                顯示我的QRcode
-                </Button>
-                </Link>
-
-                <Link to="/MainPage/UpdateInfo">
-                <Button color="primary">
-                更新我的路程
-                </Button>
-                </Link>
-
-
-                {/* <button onClick={this.ScanButtom}>掃描QRcode </button>
-                <button onClick={this.CheckButtom}>檢查我的路程 </button>
-                <button onClick={this.MyQRcodeButtom}>顯示我的QRcode </button>
-                <button onClick={this.UpdateButtom}>更新我的路程 </button> */}
-            </div>
-        )
-    }
+        </div>
+    )
+  }
 }
 
 export default withStyles(loginPageStyle)(MainPage);
