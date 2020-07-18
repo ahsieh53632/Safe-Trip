@@ -18,7 +18,7 @@ Node.js <br/>
 安裝Dependicies:
  `npm install`
  ## BackEnd config:
-此project 的backend server 架設在 localhost 上面, 需要安裝Mysql 並跑 /api/create_db.sql 來創建需要的table <br />
+此project 的backend server 架設在 localhost 上面, 需要安裝Mysql, 手動設置connection 並跑 /api/create_db.sql 來創建需要的table <br />
 `Table: person, beento, encounter, location` <br/>
 跑server: <br/>
 `gatsby develop` <br />
