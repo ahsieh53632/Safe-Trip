@@ -30,6 +30,7 @@ Node.js <br/>
 # Functinoality:
   - Login/Register: 第一次使用需要註冊帳號 (api 要有運作), 之後便會自己登入
   - 掃描QRCODE: 不須開啟網頁或安裝App, 使用手機相機掃描特定格式QRCODE後 會自動call api 並update 資料
+    - ###### 因DB設在localhost 上面, 如需測試請參考下面
   - 人/Uber: 會告知你這個人或Uber司機是否最近接觸過染病人士, 並記錄雙方的接觸
   - 景點: 會記錄你在今天去過這個位置
   - AtRisk: 顯示最近去的地方有沒有出現疫情或見過的人有沒有生病 (不會顯示染病者個人資訊)
@@ -37,7 +38,13 @@ Node.js <br/>
     - ###### 註: 得到肺炎與否透過醫生端QRCODE update 無法透過網站更新
   - UpdateInfo: 更新個人資料 (名字, 電話, 地址等)
   - AddID: 無法掃描QRCODE 情況下手動更新到Database
-    - ##### 註: 目前只有前端 連結api 部分沒有做
+    - ###### 註: 目前只有前端 連結api 部分沒有做
   - Alert: 若最近有接觸過疫情, 會在MainPage 顯示一個提醒
   - MainPage: 主頁面
+
+# Test QRCODE updates locally:
+## 人與人見面 (or Uber, AirBnb):
+ - 前往 /scanCode?info={"type": "encounter", "otherpersonid": "接觸人帳號", "locationid": "位置id (在資料庫上的location)", "date": "日期"}
+## 景點:
+ - 前往 /scanCode?info={"type": "beento", "locationid": "位置id (在資料庫上的location)", "date": "日期"}
 
