@@ -28,16 +28,6 @@ class MainPage extends Component{
 
   render() {
       return(
-        <div>
-        <Header
-          brand="SAVE_TRIP"
-          rightLinks={<HeaderLinks />}
-          fixed
-          // changeColorOnScroll={{
-          //     height: 250,
-          //     color: "white",
-          // }}
-        />
         <div
           style={{
             backgroundImage: "url(" + image + ")",
@@ -62,7 +52,6 @@ class MainPage extends Component{
           <Footer/>
 
         </div>
-      </div>
     )
   }
 }

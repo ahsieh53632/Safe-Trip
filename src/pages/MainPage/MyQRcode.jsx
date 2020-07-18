@@ -12,7 +12,7 @@ function MyQRcode(){
 return (
   <div>
       <GridContainer justify="center" style={{ margin: 10 }}>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={30} sm={30} md={10}>
           <Card>
             <CardHeader
                 style={{
@@ -30,12 +30,14 @@ return (
               <Link to="../CheckPage/CheckPage">
                 <Button
                     fullWidth
-                    variant="contained"
+                    variant="outlined"
                     size="medium"
-                    style={{
-                        color: "white",
-                        backgroundColor: "#f8964b",
-                    }}>
+                    color="secondary"
+                    // style={{
+                    //     color: "white",
+                    //     backgroundColor: "#f8964b",
+                    // }}
+                    >
                     顯示我的QRcode 
                 </Button>
               </Link>

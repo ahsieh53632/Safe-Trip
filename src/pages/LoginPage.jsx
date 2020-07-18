@@ -142,7 +142,7 @@ class LoginPage extends React.Component {
                 <Card className={classes[this.state.cardAnimation]}>
                 <GridItem>
                     <CardHeader color="warning" className={classes.cardHeader}>
-                      <h4>Safe Trip login</h4>
+                      <h7>Safe Trip login</h7>
                     </CardHeader>
                     <p className={classes.divider}></p>
                     <CardBody>
