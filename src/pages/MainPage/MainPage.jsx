@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 // import {Link, navigate} from "gatsby";
+
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
 import AddID from "./AddID";
+import CheckPersonal from "./CheckPersonal.jsx"
+
 import Footer from "../../components/Footer/Footer.jsx";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -40,6 +43,9 @@ class MainPage extends Component{
             alignItems: "center",
           }}
         >
+          
+          <CheckPersonal/>
+
           <Check/>
 
           <MyQRcode/>

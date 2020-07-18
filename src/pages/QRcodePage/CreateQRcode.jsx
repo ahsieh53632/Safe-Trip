@@ -37,7 +37,7 @@ class CreateQRcode extends Component{
                         <QRcodeset/>
                         <Link to="/MainPage/MainPage">
                         <Button color="primary" >
-                        上一頁
+                        Previous Page
                     </Button>
                     </Link>
                     </div>
