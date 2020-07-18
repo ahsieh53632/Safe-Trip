@@ -41,7 +41,7 @@ export default function Check() {
       </CardHeader>
       <CardBody>
         <h5 className={classes.cardTitle}>Special title treatment</h5>
-          <Link to="../CheckPage/CheckPage">
+          <Link to="../../CheckPage/CheckPage">
             <Button color="primary">GO!</Button>
           </Link>
       </CardBody>
