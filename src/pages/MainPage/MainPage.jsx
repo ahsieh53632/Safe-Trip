@@ -1,17 +1,22 @@
 import React, { Component } from "react";
-import {Link, navigate} from "gatsby";
+// import {Link, navigate} from "gatsby";
+
 import Check from "./Check";
-import Header from "components/Header/Header";
-import HeaderLinks from "components/Header/HeaderLinks";
-import Footer from "components/Footer/Footer.jsx";
-
-import Button from "../../components/CustomButtons/Button.jsx";
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
-
-import withStyles from "@material-ui/core/styles/withStyles";
-import image from "assets/img/bg.jpg";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
+// import Test from "./Test.jsx"
+
+import Footer from "../../components/Footer/Footer.jsx";
+// import Header from "../../components/Header/Header";
+// import HeaderLinks from "../../components/Header/HeaderLinks";
+// import Button from "../../components/CustomButtons/Button.jsx";
+
+import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+import withStyles from "@material-ui/core/styles/withStyles";
+// import { Typography } from "@material-ui/core"
+
+import image from "assets/img/bg.jpg";
+
 
 class MainPage extends Component{
     state;
@@ -48,6 +53,7 @@ class MainPage extends Component{
           <MyQRcode/>
 
           <UpdateInfo/>
+          {/* <Test/> */}
 
           <Footer/>
 
