@@ -1,53 +1,43 @@
-import React, { Component } from "react";
-import {Link, navigate} from "gatsby";
-import withStyles from "@material-ui/core/styles/withStyles";
+import React from "react";
+// material-ui components
+import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
+// core components
+import Card from "../../components/Card/Card.jsx";
+import CardBody from "../../components/Card/CardBody.jsx";
+import CardHeader from "../../components/Card/CardHeader.jsx";
+import CardFooter from "../../components/Card/CardFooter.jsx";
 import Button from "../../components/CustomButtons/Button.jsx";
-import MyQRcode from "qrcode.react";
-// import image from "assets/img/bg7.jpg";
 
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+import { cardTitle } from "assets/jss/material-kit-react.jsx";
 
-class GetQRcode extends Component{
-      constructor(props) {
-        super(props);
-        this.state={
-            place:null,
-            name:null,
-            flag:null,
-            ID:null,
-            phonenumber:null
-        }
-        this.handleClick=this.handleClick.bind(this);
-      }
-      componentDidMount(){
-          this.handleClick();//回傳數據
-      }
-      handleClick(){
-        fetch('http://localhost:3000/LoginPage/auth', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "ID": this.state.ID,
-                "name": this.state.name,
-                "place":this.state.place,
-                "flag":this.state.flag,
-                "phonenumber":this.state.phonenumber
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-        })
-      }
+const styles = {
+  cardTitle,
+  textCenter: {
+    textAlign: "center"
+  },
+  textMuted: {
+    color: "#6c757d"
+  },
+};
 
-    render() {
-        return(
-            <div>
-            </div>
-        )
-    }
+const useStyles = makeStyles(styles);
+
+export default function Test() {
+  const classes = useStyles();
+  return (
+    <Card className={classes.textCenter}>
+      <CardHeader color="danger">Feet</CardHeader>
+      <CardBody>
+        <h4 className={classes.cardTitle}>Special title treatment</h4>
+        <p>
+          With supporting text below as a
+          natural lead-in to additional content.
+        </p>
+        <Button color="primary">Do something</Button>
+      </CardBody>
+      <CardFooter className={classes.textMuted}>
+        2 days ago
+      </CardFooter>
+    </Card>
+  );
 }
-
-export default withStyles(loginPageStyle)(GetQRcode);
