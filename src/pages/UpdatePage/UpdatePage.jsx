@@ -7,6 +7,8 @@ import UpdatePhone from "./UpdatePhone";
 
 import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
+import Header from "components/Header/Header.jsx";
+import HeaderLinks from "components/Header/HeaderLinks.jsx";
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -28,6 +30,15 @@ class UpdatePage extends Component{
 
     render(){
         return(
+            <div>
+                <Header
+                    brand="Safe-Trip"
+                    rightLinks={<HeaderLinks />}
+                    fixed
+                    changeColorOnScroll={{
+                    height: 100,
+                    color: "white",
+                }}/>
             <div
               style={{
                 backgroundImage: "url(" + image + ")",
@@ -69,6 +80,7 @@ class UpdatePage extends Component{
                 </ThemeProvider>
             </Button>
             <Footer/>
+        </div>
         </div>
         )
     }
