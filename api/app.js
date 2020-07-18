@@ -13,6 +13,7 @@ var MainPageRouter = require('./routes/MainPage')
 var QRRouter = require('./routes/QRPage')
 var uuid = require('uuid');
 var app = express();
+var InfoRouter = require('./routes/PersonInfo')
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -53,6 +54,7 @@ app.use('/LoginPage', LoginRouter);
 app.use('/CheckPage', CheckRouter);
 app.use('/scanCode', QRRouter);
 app.use('/MainPage', MainPageRouter);
+app.use('/Person', InfoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

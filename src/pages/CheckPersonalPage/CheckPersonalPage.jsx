@@ -20,9 +20,34 @@ import CheckPersonalStreet from"./CheckPersonalStreet.jsx"
 
 
 class CheckPersonalPage extends Component{
-
+    cache_account;
     constructor(props){
         super(props);
+
+        if (window.localStorage != null) {
+            this.cache_account = window.localStorage.getItem("account");
+        }
+
+        this.state = {name: "", phone: "", address: ""};
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:3000/Person/info', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "account": this.cache_account,
+        })
+        })
+        .then(res => res.json())
+        .then(d => {
+            console.log(d);
+        this.setState({name: d[0].name, phone: d[0].phone, address: d[0].address});
+            
+      })
     }
 
     render(){
@@ -42,11 +67,11 @@ class CheckPersonalPage extends Component{
                 alignItems: "center",
               }}>
 
-            <CheckPersonalname/>
+            <CheckPersonalname name={this.state.name}/>
 
-            <CheckPersonalPhone/>
+            <CheckPersonalPhone Phone={this.state.phone}/>
 
-            <CheckPersonalStreet/>
+            <CheckPersonalStreet Street={this.state.address}/>
 
             <Link to="../../MainPage/MainPage">
                 <Button 

@@ -27,7 +27,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function UpdateName(){
+const Street = (props) => {
 
     const classes = useStyles();
 
@@ -51,7 +51,7 @@ export default function UpdateName(){
                             justify="center"
                         >
                             <GridItem xs={8}>
-                    <GetPersonalStreet/>
+                    <GetPersonalStreet Street={props.Street}/>
                             </GridItem>
                         </GridContainer>
                     </CardBody>
@@ -60,4 +60,6 @@ export default function UpdateName(){
         </GridContainer>
     </div>
     );
-}
+};
+
+export default Street;

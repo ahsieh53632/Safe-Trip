@@ -9,7 +9,6 @@ const con = mysql.createConnection({
   database: 'safe-trip'
 });
 
-console.log('connect');
 
 /* GET home page. */
 router.post('/check', function(req, res) {
@@ -31,6 +30,7 @@ router.post('/check', function(req, res) {
   con.query(query, [account, account], function(err, r, fields) {
     if (err) {
       console.log(err);
+      res.end(JSON.stringify({"error": true}));
     } else {
       console.log('suc');
       console.log(r);
