@@ -27,7 +27,7 @@ return (
           <GridContainer alignItems="stretch" justify="center" spacing={10}>
 
             <GridItem lg={8}>
-              <Link to="../CheckPage/CheckPage">
+              <Link to="../../CheckPage/CheckPage">
                 <Button
                     fullWidth
                     variant="contained"

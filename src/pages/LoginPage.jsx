@@ -15,6 +15,11 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import {
+    ThemeProvider
+  } from "@material-ui/styles"
+import { Typography } from "@material-ui/core"  
+import theme from "../components/theme"
 
 import image from "assets/img/1.jpg";
 class LoginPage extends React.Component {
@@ -46,7 +51,7 @@ class LoginPage extends React.Component {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    //navigate('/MainPage/MainPage');
+                    navigate('/MainPage/MainPage');
                 }
             })
         }
@@ -142,7 +147,9 @@ class LoginPage extends React.Component {
                 <Card className={classes[this.state.cardAnimation]}>
                 <GridItem>
                     <CardHeader color="warning" className={classes.cardHeader}>
-                      <h7>Safe Trip login</h7>
+                    <ThemeProvider theme={theme}>
+                      <Typography variant="body1">Safe Trip login</Typography>
+                    </ThemeProvider>
                     </CardHeader>
                     <p className={classes.divider}></p>
                     <CardBody>
@@ -153,7 +160,7 @@ class LoginPage extends React.Component {
                           fullWidth: true
                         }}
                         inputProps={{
-                          type: "password",
+                          type: "text",
                           onChange: (e) => {this.setState({account: this.state.account, password: e.target.value})},
                           endAdornment: (
                             <InputAdornment position="end">
@@ -161,6 +168,7 @@ class LoginPage extends React.Component {
                             </InputAdornment>
                           ),
                         }}
+                        white = {true}
                       />
                        <CustomInput
                         labelText="密碼"
