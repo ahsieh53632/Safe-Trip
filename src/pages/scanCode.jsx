@@ -8,6 +8,7 @@ import { navigate } from "@reach/router";
 
 const ScanQR = ({ search }) => {
     console.log('hi');
+  let isMounted = true;
   const { info } = search;
   console.log(info)
   var objs = JSON.parse(info);
@@ -23,7 +24,63 @@ const ScanQR = ({ search }) => {
     alert('please login or register than scan qr code again!');
     navigate('/')
   }
-return <div><h1>type:{type}</h1><p>thisid: {thisid}</p><p>locationid: {locationid}</p></div>
+  if (type === "beento") {
+    console.log('adding type: beento');
+    fetch('http://localhost:3000/scanCode/beento', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "account": thisid,
+                "locationId": Number.parseInt(locationid),
+                "date": date
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.success) {
+                alert('successfully ADDED to beento table')
+                console.log('success');
+                window.location = '/MainPage/MainPage'
+            } else {
+                alert('FAILED! please relogin or register');
+                window.location = '/'
+            }
+        })
+  } else {
+    console.log('adding type: encounter');
+    fetch('http://localhost:3000/scanCode/encounter', {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "account": thisid,
+                "locationId": Number.parseInt(locationid),
+                "otherpid": otherpersonid,
+                "date": date
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.success) {
+              alert('successfully ADDED to encounter table')
+              console.log('success');
+              isMounted = false;
+              window.location = '/MainPage/MainPage'
+            } else {
+              alert('FAILED! please relogin or register');
+              isMounted = false;
+              window.location = '/LoginPage'
+            }
+        })
+  }
+return <div><h1>type:{type}</h1><p>yourid: {thisid}</p><p>locationid: {locationid}</p></div>
 }
 
 ScanQR.propTypes = {

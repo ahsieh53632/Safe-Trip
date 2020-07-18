@@ -30,14 +30,22 @@ router.put('/encounter', function(req, res) {
     var other = req.body.otherpid  
     var lid = req.body.locationId;
     var date = req.body.date;
-    var query = "INSERT INTO encounter (idperson, other_idperson, idlocation, date) VALUES(?, ?, ?, DATE(?))"
-    con.query(query, [pid, oterh, lid, date], function(err, r, fields) {
+    var query = "INSERT INTO encounter (idperson, other_idperson, idlocation, date) VALUES(?, ?, ?, DATE(?));"
+    con.query(query, [pid, other, lid, date], function(err, r, fields) {
       if (err) {
         console.log(err);
         res.end(JSON.stringify({ "success": false }));
       } else {
-        res.end(JSON.stringify({ "success": true }));
+        console.log('success');
       }
     });
-  });
+  var q2 = "INSERT INTO encounter (idperson, other_idperson, idlocation, date) VALUES(?, ?, ?, DATE(?));"
+  con.query(q2, [other, pid, lid, date], function(err, r, fields) {
+    if (err) {
+      console.log(err);
+      res.end(JSON.stringify({ "success": false }));
+    } else {
+      res.end(JSON.stringify({ "success": true }));
+    }
+  })});
 module.exports = router;
