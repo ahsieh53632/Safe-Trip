@@ -156,7 +156,7 @@ const defaultBoxShadow = {
 };
 
 const title = {
-  color: "#3C4858",
+  color: "#999999",
   margin: "1.75rem 0 0.875rem",
   textDecoration: "none",
   fontWeight: "700",
@@ -164,7 +164,11 @@ const title = {
 };
 
 const cardTitle = {
-  ...title,
+  color: "#000",
+  margin: "1.75rem 0 0.875rem",
+  textDecoration: "none",
+  fontWeight: "700",
+  fontFamily: `"Roboto", "Times New Roman", serif`,
   marginTop: ".625rem"
 };
 

@@ -34,17 +34,14 @@ export default function UpadteInfo() {
     <Card className={classes.textCenter}>
       <CardHeader color="primary">
         <ThemeProvider theme={theme}>
-          <Typography variant="body1">Upadte my Info</Typography>
+          <Typography variant="body1">
+            <h2>Upadte my Info</h2>
+          </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h4 className={classes.cardTitle}>Special title treatment</h4>
-        <p>
-          With supporting text below as a
-          natural lead-in to additional content.
-        </p>
-
-          <Link to="../UpdatePage/UpdatePage">
+        <h5 className={classes.cardTitle}>Special title treatment</h5>
+          <Link to="../../UpdatePage/UpdatePage">
             <Button color="primary">GO!</Button>
           </Link>
       </CardBody>

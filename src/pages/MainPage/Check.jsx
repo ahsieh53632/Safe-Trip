@@ -34,16 +34,13 @@ export default function Check() {
     <Card className={classes.textCenter}>
       <CardHeader color="danger">
         <ThemeProvider theme={theme}>
-          <Typography variant="body1">Check Flag Contact</Typography>
+          <Typography variant="body1">
+            <h2>Check if I'm in Risk</h2>
+          </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h4 className={classes.cardTitle}>Special title treatment</h4>
-        <p>
-          With supporting text below as a
-          natural lead-in to additional content.
-        </p>
-
+        <h5 className={classes.cardTitle}>Special title treatment</h5>
           <Link to="../CheckPage/CheckPage">
             <Button color="primary">GO!</Button>
           </Link>
