@@ -10,8 +10,7 @@ const con = mysql.createConnection({
 });
 
 
-/* GET home page. */
-router.POST('/beento', function(req, res) {
+router.post('/beento', function(req, res) {
   var pid = req.body.account;  
   var lid = req.body.locationId;
   var date = req.body.date;
@@ -26,7 +25,7 @@ router.POST('/beento', function(req, res) {
   });
 });
 
-router.POST('/encounter', function(req, res) {
+router.put('/encounter', function(req, res) {
     var pid = req.body.account;
     var other = req.body.otherpid  
     var lid = req.body.locationId;
