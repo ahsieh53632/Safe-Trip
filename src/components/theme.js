@@ -13,14 +13,6 @@ import {
       fontSize:   18,
     //   color: '#ffff'
     },
-    palette: {
-        primary: {
-            light: '#757ce8',
-            main: '#3f50b5',
-            dark: '#002884',
-            contrastText: '#fff',
-          },
-      }
   })
   
   // To use responsive font sizes, include the following line
