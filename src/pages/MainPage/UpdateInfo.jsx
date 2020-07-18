@@ -7,11 +7,13 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import {Link, navigate} from "gatsby";
 
-function MyQRcode(){
+
+
+function UpdateInfo(){
 
 return (
   <div>
-      <GridContainer justify="center" style={{ margin: 10 }}>
+        <GridContainer justify="center" style={{ margin: 10 }}>
           <GridItem xs={12} sm={12} md={4}>
           <Card>
             <CardHeader
@@ -24,9 +26,9 @@ return (
                 <h4>explaination</h4>
             </CardHeader>
             <CardBody>
-          <GridContainer alignItems="stretch" justify="center"  spacing={10}>
+          <GridContainer alignItems="stretch" justify="center" spacing={10}>
 
-            <GridItem xs={8}>
+            <GridItem lg={8}>
               <Link to="../CheckPage/CheckPage">
                 <Button
                     fullWidth
@@ -36,21 +38,25 @@ return (
                         color: "white",
                         backgroundColor: "#f8964b",
                     }}>
-                    顯示我的QRcode 
+                    更新我的路程
                 </Button>
               </Link>
+
             </GridItem>
+
           </GridContainer> 
-        </CardBody>
+          </CardBody>
       </Card>
-      </GridItem>
+          </GridItem>
       </GridContainer>
   </div>
   );
 }
 
-MyQRcode.defaultProps = {
+UpdateInfo.defaultProps = {
 // if we had any optional props, we can define what values they have here
 };
 
-export default MyQRcode;
+export default UpdateInfo;
+
+

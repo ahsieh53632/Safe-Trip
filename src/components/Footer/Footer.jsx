@@ -25,36 +25,14 @@ function Footer({ ...props }) {
     <footer className={footerClasses}>
       <div className={classes.container}>
         <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://umcptasa.org/"
-                className={classes.block}
-                target="_blank"
-              >
-                UMCP TASA
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://umcptasa.org/pages/about-us.html"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
-              </a>
-            </ListItem>
-          </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          &copy; {1900 + new Date().getYear()} , made{" "}by{" "}
           <a
-            href="https://umcptasa.org"
             className={aClasses}
             target="_blank"
           >
-            UMCP TASA
+            中央路垃圾
           </a>{" "}
         </div>
       </div>
