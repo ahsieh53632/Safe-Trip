@@ -52,7 +52,7 @@ app.use('/users', usersRouter);
 app.use('/LoginPage', LoginRouter);
 app.use('/MainPage', MainPageRouter);
 app.use('/MainPage/CheckPage/CheckPage', MainPageRouter);
-app.use('/MainPage/MyQRcode', QRRouter)
+app.use('/scanCode', QRRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

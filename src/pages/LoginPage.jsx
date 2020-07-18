@@ -51,7 +51,7 @@ class LoginPage extends React.Component {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    //navigate('/MainPage/MainPage');
+                    navigate('/MainPage/MainPage');
                 }
             })
         }
