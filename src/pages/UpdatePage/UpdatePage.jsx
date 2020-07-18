@@ -5,10 +5,16 @@ import UpdateName from "./UpdateName";
 import UpdateStreet from "./UpdateStreet";
 import UpdatePlaceID from "./UpdatePlaceID";
 
+import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
+import {
+    ThemeProvider
+  } from "@material-ui/styles"
+import { Typography } from "@material-ui/core"  
+import theme from "../../components/theme"
 
 import image from "assets/img/bg.jpg";
 
@@ -41,7 +47,27 @@ class UpdatePage extends Component{
 
             <UpdatePlaceID/>
 
-            </div>
+            <Link to="../../MainPage/MainPage">
+                <Button 
+                color="primary"
+                >
+                <ThemeProvider theme={theme}>
+                    <Typography variant="body1">
+                        Previous Page
+                    </Typography>
+                </ThemeProvider>
+                </Button>
+            </Link>
+
+            <Button color="primary">
+                <ThemeProvider theme={theme}>
+                    <Typography variant="body1">
+                        RENEW
+                    </Typography>
+                </ThemeProvider>
+            </Button>
+            <Footer/>
+        </div>
         )
     }
 }
