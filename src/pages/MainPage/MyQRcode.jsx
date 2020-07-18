@@ -41,7 +41,7 @@ export default function MyQRcode() {
       </CardHeader>
       <CardBody>
         <h5 className={classes.cardTitle}>Special title treatment</h5>
-          <Link to="../QRcodePage/QRcodePage">
+          <Link to="../../QRcodePage/CreateQRcode">
             <Button color="primary">GO!</Button>
           </Link>
       </CardBody>
