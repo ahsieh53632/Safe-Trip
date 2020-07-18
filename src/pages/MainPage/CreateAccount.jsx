@@ -16,20 +16,21 @@ class GetQRcode extends Component{
             name:null,
             flag:null,
             ID:"",
-            phonenumber:null
+            URL:"",
+            phonenumber:null,
         }   
       }
 
     render() {
-        if(this.state.ID!==""){
+        if(this.state.URL!==""){
                 return(
                     <div>
                         <div>請輸入ID:</div>
                         <input type="text" onChange={(e)=>{ this.setState({ID:e.target.value}) }}></input>
-                <QRcodeID sendID={this.state.ID}/>
-                <Fetchdata sendID={this.state.ID}/>
-                    <Link to="/MainPage/MainPage">
-                    <Button color="primary" >
+                        <div>{this.state.URL}</div>
+                        <QRcodeID sendID={this.state.URL}/>
+                        <Link to="/MainPage/MainPage">
+                        <Button color="primary" >
                         上一頁
                     </Button>
                     </Link>
@@ -40,11 +41,12 @@ class GetQRcode extends Component{
         }
         else return (
             <div>
+                <button onClick={(e)=>{this.setState({URL:"http://localhost:8000/scanCode?info={ \"type\": beento, \"locationid\": 0,\"otherpersonid\":"+this.state.ID+"}"})}}>生成QRcode</button>
                 <div>請輸入ID名:</div>
                 <input type="text" onChange={(e)=>{ this.setState({ID:e.target.value}) }}/>
                 <Link to="/MainPage/MainPage">
                 <Button color="primary" >
-                    上一頁
+                上一頁
                 </Button>
                 </Link>
             </div>

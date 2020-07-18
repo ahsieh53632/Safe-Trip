@@ -11,12 +11,25 @@ import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.
 class QRcodeID extends Component{
     constructor(props) {
         super(props);
+        this.state={
+            URL:"http://localhost:8000/scanCode?info={ \"type\": 1, \"locationid\": here,\"otherpersonid\": }"
+        }
       }
 
+      combine(){
+        this.setState({URL:this.state.URL+this.props.sendID});
+      }
+
+      componentDidMount(){
+          this.combine();
+
+      }
+    
     render() {
            return (
                 <div>
-                    <MyQRcode value={this.props.sendID} ></MyQRcode>
+                <MyQRcode value={this.props.sendID}></MyQRcode>
+                <div>{this.props.sendID}</div>
                 </div>
             )
 
