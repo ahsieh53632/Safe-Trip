@@ -35,12 +35,12 @@ export default function MyQRcode() {
       <CardHeader color="warning">
         <ThemeProvider theme={theme}>
           <Typography variant="body1">
-            <h2>Show My QRcode</h2>
+            <h2>My QRcode</h2>
           </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h5 className={classes.cardTitle}>Special title treatment</h5>
+        <h5 className={classes.cardTitle}>Generate Your own QRcode for Personal or Location use</h5>
           <Link to="../../QRcodePage/CreateQRcode">
             <Button color="primary">GO!</Button>
           </Link>
