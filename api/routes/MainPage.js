@@ -11,24 +11,30 @@ const con = mysql.createConnection({
 
 
 /* GET home page. */
-router.get('/alert', function(req, res) {
-  console.log('getting aler data');
+router.post('/alert', function(req, res) {
+  console.log('getting alert data');
   var account = req.body.account;
-  var password = req.body.pwd;
-  var loggedin = false
-  var query = "SELECT * FROM person WHERE account = ? AND password = ?"
-  con.query(query, [account, password], function(err, r, fields) {
+  var query = "SELECT DISTINCT * FROM \
+  (SELECT risky_place.name, risky_place.date \
+  FROM \
+  (SELECT DISTINCT b.idlocation, l.name, b.`date` \
+  FROM beento AS b, (SELECT p.`account` FROM person AS p WHERE p.condition = \"INFECTED\" or p.condition = \"ATRISK\") AS infec, location AS l \
+  WHERE b.idperson = infec.account AND l.idlocation = b.idlocation) AS risky_place, beento AS bt \
+  WHERE bt.idperson = ? AND bt.idlocation = risky_place.idlocation \
+  union all \
+  SELECT DISTINCT l.name, e.date \
+  FROM \
+  (SELECT p.`account` AS pid FROM person AS p WHERE p.condition = \"INFECTED\" or p.condition = \"ATRISK\") AS infec_p, encounter e, location l \
+  WHERE e.idperson = ? AND e.other_idperson = infec_p.pid AND e.idlocation = l.idlocation) AS m;"
+  con.query(query, [account, account], function(err, r, fields) {
     if (err) {
       console.log(err);
     }
     if (r.length > 0) {
       console.log('success')
-      loggedin = true;
-      console.log(JSON.stringify({ "success": loggedin }));
-      res.end(JSON.stringify({ "success": loggedin }));
+      res.end(JSON.stringify({ "alert": true }));
     } else {
-      loggedin = false;
-      res.end(JSON.stringify({ "success": loggedin }));
+      res.end(JSON.stringify({ "alert": false }));
     }
   });
   

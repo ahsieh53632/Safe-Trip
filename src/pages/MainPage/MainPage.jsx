@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import {Link, navigate} from "gatsby";
 
-import WarningSign from "./WarningSign"
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
@@ -10,10 +9,8 @@ import AddID from "./AddID";
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
-
 import image from "assets/img/bg.jpg";
 
 
