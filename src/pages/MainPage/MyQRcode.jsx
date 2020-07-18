@@ -34,17 +34,14 @@ export default function MyQRcode() {
     <Card className={classes.textCenter}>
       <CardHeader color="warning">
         <ThemeProvider theme={theme}>
-          <Typography variant="body1">Show My QRcode</Typography>
+          <Typography variant="body1">
+            <h2>Show My QRcode</h2>
+          </Typography>
         </ThemeProvider>
       </CardHeader>
       <CardBody>
-        <h4 className={classes.cardTitle}>Special title treatment</h4>
-        <p>
-          With supporting text below as a
-          natural lead-in to additional content.
-        </p>
-
-          <Link to="../QRcodePage/QRcodekPage">
+        <h5 className={classes.cardTitle}>Special title treatment</h5>
+          <Link to="../QRcodePage/QRcodePage">
             <Button color="primary">GO!</Button>
           </Link>
       </CardBody>

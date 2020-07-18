@@ -40,7 +40,7 @@ class MainPage extends Component{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            " name":this.state.name,
+            " name":this.props.name,
             "place":this.props.sendplace,
             "ID":this.state.ID,
             "phonenumber":this.state.phonenumber,
