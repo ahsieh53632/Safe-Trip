@@ -17,20 +17,19 @@ import image from "assets/img/bg.jpg";
 
 class MainPage extends Component{
     state;
-
+    cache_account;
   constructor(props){
       super(props);
       this.state = {
-          Scan: false,
-          Check: false,
-          MyQRcode: false,
-          UpadteInfo: false,
           alert: false,
       };
+      if (window.localStorage != null) {
+        this.cache_account = window.localStorage.getItem("account");
+      }
   }
 
   componentDidMount () {
-    fetch('http://localhost:3000/CheckPage/check', {
+    fetch('http://localhost:3000/MainPage/alert', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -42,8 +41,9 @@ class MainPage extends Component{
         })
         .then(res => res.json())
         .then(d => {
+          console.log(d);
             if (d.alert) {
-              this.state.alert = true
+              this.setState({alert: true})
             }
       })
   }

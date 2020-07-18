@@ -30,6 +30,7 @@ router.post('/alert', function(req, res) {
     if (err) {
       console.log(err);
     }
+    console.log(r);
     if (r.length > 0) {
       console.log('success')
       res.end(JSON.stringify({ "alert": true }));
