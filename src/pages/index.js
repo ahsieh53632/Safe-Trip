@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
 import {createMemoryHistory} from "history";
-import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import 'typeface-roboto'
+import { Router } from "@reach/router"
 
 import createBrowserHistory from 'history/createBrowserHistory';
 import "assets/scss/material-kit-react.scss?v=1.4.0";
@@ -14,12 +14,8 @@ import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";
 
 export default () => (
-  <Router>
-    <Switch>
-      <Route exact path="/" component={LoginPage} />
-      <Route path="/scanCode/:id">
-      </Route>
-    </Switch>
+  <Router basepath="/">
+    <LoginPage path="/" />
   </Router>
 );
 

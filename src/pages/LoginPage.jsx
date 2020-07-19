@@ -61,7 +61,7 @@ class LoginPage extends React.Component {
         event.preventDefault()
         console.log(account);
         console.log(password);
-        fetch('https://safe-trip.herokuapp.com//LoginPage/auth', {
+        fetch('https://safe-trip.herokuapp.com/LoginPage/auth', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
