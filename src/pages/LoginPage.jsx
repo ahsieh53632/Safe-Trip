@@ -147,7 +147,7 @@ class LoginPage extends React.Component {
                 <div className={classes.container}>
                 <GridContainer>
                 <Card className={classes[this.state.cardAnimation]}>
-                <GridItem>
+                <GridItem xs={12} sm={12} md={4}>
                     <CardHeader color="warning" className={classes.cardHeader}>
                     <ThemeProvider theme={theme}>
                       <Typography variant="body1">Safe Trip login</Typography>

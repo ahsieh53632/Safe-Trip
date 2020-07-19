@@ -24,7 +24,7 @@ class CreateURL extends Component{
         }
         this.state={
 
-            URL:"https://safe-trip.herokuapp.com/scanCode?info={ \"type\": \"encounter\", \"locationid\": 1,\"otherpersonid\":"+"\""+this.cache_account+"\""+"}"
+            URL:"https://safetripsite.herokuapp.com/scanCode?info={ \"type\": \"encounter\", \"locationid\": 1,\"otherpersonid\":"+"\""+this.cache_account+"\""+"}"
 
         }   
       }
