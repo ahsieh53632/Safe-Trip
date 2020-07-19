@@ -40,7 +40,6 @@ Node.js <br/>
     - ###### 註: 得到肺炎與否透過醫生端QRCODE update 無法透過網站更新
   - UpdateInfo: 更新個人資料 (名字, 電話, 地址等)
   - AddID: 無法掃描QRCODE 情況下手動更新到Database
-    - ###### 註: 目前只有前端 連結api 部分沒有做
   - Alert: 若最近有接觸過疫情, 會在MainPage 顯示一個提醒 (ICON)
   - MainPage: 主頁面
   - ViewInfo: 檢視個人資料
