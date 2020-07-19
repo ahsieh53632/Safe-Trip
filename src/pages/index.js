@@ -14,9 +14,7 @@ import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";
 
 export default () => (
-  <Router basepath="/">
-    <LoginPage path="/" />
-  </Router>
+  <h1> HI </h1>
 );
 
 // class Index extends React.Component {
