@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx";
-
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import QRcodeID from "./QRcodeID.jsx";
 
 //create URL

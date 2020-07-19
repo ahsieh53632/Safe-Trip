@@ -9,6 +9,7 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
 
 import QRcodeset from "./QRcodeset.jsx";
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 
 //生成qrcode頁面
 

@@ -5,6 +5,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import withLocation from "./withLocation"
 import { navigate } from "@reach/router";
+import "assets/scss/material-kit-react.scss?v=1.4.0";
+
 
 const ScanQR = ({ search }) => {
     console.log('hi');

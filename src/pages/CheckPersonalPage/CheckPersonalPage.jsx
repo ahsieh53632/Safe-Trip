@@ -18,7 +18,7 @@ import image from "assets/img/bg.jpg";
 import CheckPersonalname from"./CheckPersonalname.jsx"
 import CheckPersonalPhone from"./CheckPersonalPhone.jsx"
 import CheckPersonalStreet from"./CheckPersonalStreet.jsx"
-
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 
 
 

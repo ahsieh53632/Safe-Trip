@@ -20,7 +20,7 @@ import {
   } from "@material-ui/styles"
 import { Typography } from "@material-ui/core"  
 import theme from "../components/theme"
-
+import "assets/scss/material-kit-react.scss?v=1.4.0";
 import image from "assets/img/1.jpg";
 class LoginPage extends React.Component {
     localStorage;
