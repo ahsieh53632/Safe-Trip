@@ -2,7 +2,7 @@ import React from "react"
 import { Link, navigate } from "gatsby"
 import {createMemoryHistory} from "history";
 import 'typeface-roboto'
-import { Router, navigate } from "@reach/router"
+import { Router } from "@reach/router"
 
 import createBrowserHistory from 'history/createBrowserHistory';
 import "assets/scss/material-kit-react.scss?v=1.4.0";
