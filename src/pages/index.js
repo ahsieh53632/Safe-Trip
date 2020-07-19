@@ -4,11 +4,11 @@ import {createMemoryHistory} from "history";
 import 'typeface-roboto'
 import { Router } from "@reach/router"
 
+
 import createBrowserHistory from 'history/createBrowserHistory';
 import "assets/scss/material-kit-react.scss?v=1.4.0";
 import 'typeface-roboto';
 import 'typeface-roboto-slab';
-
 
 import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";
@@ -20,6 +20,8 @@ export default () => (
   </header>
   <Router basepath="/">
     <LoginPage path="/" />
+    <MainPage path="/MainPage/MainPage" />
+    <MainPage path="/MainPage" />
   </Router>
   </div>
 );
