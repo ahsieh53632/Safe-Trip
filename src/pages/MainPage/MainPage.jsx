@@ -31,7 +31,7 @@ class MainPage extends Component{
   }
 
   componentDidMount () {
-    fetch('http://localhost:3000/MainPage/alert', {
+    fetch('https://safe-trip.herokuapp.com/MainPage/alert', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
