@@ -4,7 +4,6 @@ import 'typeface-roboto'
 import { Router } from "@reach/router"
 
 
-import createBrowserHistory from 'history/createBrowserHistory';
 import "assets/scss/material-kit-react.scss?v=1.4.0";
 import 'typeface-roboto';
 import 'typeface-roboto-slab';
@@ -20,7 +19,7 @@ export default () => (
   <header>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   </header>
-  <Router history={hist}>
+  <Router>
     <MainPage path="/MainPage/MainPage" />
     <ScanQR path="/ScanQR" />
     <CheckPage path="/CheckPage/CheckPage" />
