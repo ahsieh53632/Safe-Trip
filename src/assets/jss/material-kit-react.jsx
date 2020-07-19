@@ -25,8 +25,8 @@ const transition = {
 };
 
 const conatinerFluid = {
-  paddingRight: "300px",
-  paddingLeft: "300px",
+  paddingRight: "15",
+  paddingLeft: "15",
   marginRight: "auto",
   marginLeft: "auto",
   width: "100%"

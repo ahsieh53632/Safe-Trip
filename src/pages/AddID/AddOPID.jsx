@@ -28,7 +28,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function AddOPIDID(){
+const AddOPIDID = (props) => {
 
     const classes = useStyles();
 
@@ -72,3 +72,5 @@ export default function AddOPIDID(){
     </div>
     );
 }
+
+export default AddOPIDID;

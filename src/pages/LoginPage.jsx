@@ -24,7 +24,7 @@ import theme from "../components/theme"
 import image from "assets/img/1.jpg";
 class LoginPage extends React.Component {
     localStorage;
-    state = {account: "", password: ""}
+    state = {account: "", password: "", cardAnimation: "cardHidden"}
     constructor(props) {
         super(props);
         this.localStorage = null;
@@ -144,10 +144,10 @@ class LoginPage extends React.Component {
                     backgroundPosition: "top center"
                 }}
                 >
-                <div className={classes.container}>
-                <GridContainer>
+                <div className={classes.container} >
+                <GridContainer >
                 <Card className={classes[this.state.cardAnimation]}>
-                <GridItem xs={12} sm={12} md={4}>
+                <GridItem>
                     <CardHeader color="warning" className={classes.cardHeader}>
                     <ThemeProvider theme={theme}>
                       <Typography variant="body1">Safe Trip login</Typography>

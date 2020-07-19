@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
-import {createMemoryHistory} from "history";
 import 'typeface-roboto'
 import { Router } from "@reach/router"
 
@@ -13,15 +12,19 @@ import 'typeface-roboto-slab';
 import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";
 import ScanQR from './scanCode';
+import CheckPage from './CheckPage/CheckPage'
+
+const hist = createBrowserHistory();
 export default () => (
   <div>
   <header>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   </header>
-  <Router basepath="/">
-    <LoginPage path="/" />
+  <Router history={hist}>
     <MainPage path="/MainPage/MainPage" />
-    <MainPage path="/MainPage" />
+    <ScanQR path="/ScanQR" />
+    <CheckPage path="/CheckPage/CheckPage" />
+    <LoginPage path="/" />
   </Router>
   </div>
 );

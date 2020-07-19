@@ -28,7 +28,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function UpadteInfo() {
+const UpdateInfo = (props) => {
   const classes = useStyles();
   return (
     <Card className={classes.textCenter}>
@@ -52,6 +52,7 @@ export default function UpadteInfo() {
   );
 }
 
+export default UpdateInfo
 // function UpdateInfo(){
 // return (
 //   <div>
