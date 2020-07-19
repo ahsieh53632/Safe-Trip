@@ -23,8 +23,10 @@ class MainPage extends Component{
       this.state = {
           alert: false,
       };
-      if (window.localStorage != null) {
-        this.cache_account = window.localStorage.getItem("account");
+      if (typeof window !== 'undefined') {
+        if (window.localStorage != null) {
+          this.cache_account = window.localStorage.getItem("account");
+        }
       }
   }
 

@@ -17,16 +17,20 @@ const ScanQR = ({ search }) => {
   var locationid = objs.locationid;
   var otherpersonid = objs.otherpersonid;
   var date = objs.date;
-  if (window.localStorage != null) {
-    console.log(window.localStorage)
-    var thisid = window.localStorage.getItem("account")
-  } else {
-    alert('please login or register than scan qr code again!');
-    navigate('/')
+
+  if (typeof window !== 'undefined') {
+    if (window.localStorage != null) {
+      console.log(window.localStorage)
+      var thisid = window.localStorage.getItem("account")
+    } else {
+      alert('please login or register than scan qr code again!');
+      navigate('/')
+    }
   }
+  
   if (type === "beento") {
     console.log('adding type: beento');
-    fetch('http://localhost:3000/scanCode/beento', {
+    fetch('https://safe-trip.herokuapp.com/scanCode/beento', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -52,7 +56,7 @@ const ScanQR = ({ search }) => {
         })
   } else {
     console.log('adding type: encounter');
-    fetch('http://localhost:3000/scanCode/encounter', {
+    fetch('https://safe-trip.herokuapp.com/scanCode/encounter', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',

@@ -27,16 +27,16 @@ class CheckPersonalPage extends Component{
     cache_account;
     constructor(props){
         super(props);
-
-        if (window.localStorage != null) {
-            this.cache_account = window.localStorage.getItem("account");
+        if (typeof window !== 'undefined') {
+            if (window.localStorage != null) {
+                this.cache_account = window.localStorage.getItem("account");
+            }
         }
-
         this.state = {name: "", phone: "", address: ""};
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/Person/info', {
+        fetch('https://safe-trip.herokuapp.com/Person/info', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

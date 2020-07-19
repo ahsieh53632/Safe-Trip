@@ -1,8 +1,7 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
 import {createMemoryHistory} from "history";
-import {Route, HashRouter as Router, Switch} from "react-router-dom";
-import ReactDOM from 'react-dom';
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import 'typeface-roboto'
 
 import createBrowserHistory from 'history/createBrowserHistory';

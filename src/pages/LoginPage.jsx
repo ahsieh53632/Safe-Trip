@@ -37,7 +37,7 @@ class LoginPage extends React.Component {
             console.log(this.localStorage);
             var cache_account = this.localStorage.getItem("account");
             var cache_pwd = this.localStorage.getItem("password");
-            fetch('http://localhost:3000/LoginPage/auth', {
+            fetch('https://safe-trip.herokuapp.com/LoginPage/auth', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -61,7 +61,7 @@ class LoginPage extends React.Component {
         event.preventDefault()
         console.log(account);
         console.log(password);
-        fetch('http://localhost:3000/LoginPage/auth', {
+        fetch('https://safe-trip.herokuapp.com//LoginPage/auth', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -105,7 +105,7 @@ class LoginPage extends React.Component {
 
     handleReg (event, account, password)  {
         event.preventDefault()
-        fetch('http://localhost:3000/LoginPage/reg', {
+        fetch('https://safe-trip.herokuapp.com/LoginPage/reg', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',

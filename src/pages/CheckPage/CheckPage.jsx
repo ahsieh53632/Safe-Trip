@@ -15,15 +15,17 @@ class CheckPage extends Component{
     constructor(props) {
         super(props);
         this.state = { data: [], };
-        if (window.localStorage != null) {
-            this.cache_account = window.localStorage.getItem("account")
-            console.log(this.cache_account)
+        if (typeof window !== 'undefined') {
+            if (window.localStorage != null) {
+                this.cache_account = window.localStorage.getItem("account")
+                console.log(this.cache_account)
+            }
         }
     }
     
     componentDidMount () {
         console.log('fectching check')
-        fetch('http://localhost:3000/CheckPage/check', {
+        fetch('https://safe-trip.herokuapp.com/CheckPage/check', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
