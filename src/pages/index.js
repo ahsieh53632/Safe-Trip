@@ -13,7 +13,7 @@ import LoginPage from "./LoginPage.jsx";
 import ScanQR from './scanCode';
 import CheckPage from './CheckPage/CheckPage'
 
-const hist = createBrowserHistory();
+
 export default () => (
   <div>
   <header>
