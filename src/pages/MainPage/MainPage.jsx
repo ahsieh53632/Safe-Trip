@@ -14,7 +14,6 @@ import Footer from "../../components/Footer/Footer.jsx";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import withStyles from "@material-ui/core/styles/withStyles";
 import image from "assets/img/bg.jpg";
-import CheckPersonal from './CheckPersonal.jsx'
 
 class MainPage extends Component{
     state;
