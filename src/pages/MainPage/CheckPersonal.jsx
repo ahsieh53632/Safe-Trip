@@ -16,7 +16,6 @@ import { Typography } from "@material-ui/core"
 import theme from "../../components/theme"
 
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
-import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 
 const styles = {
   cardTitle,
