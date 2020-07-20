@@ -76,7 +76,7 @@ const Warning = (props) => {
         disableRestoreFocus
       >
         <Typography>
-            You might have encounter with infected people, go check your AtRisk
+            You might have encountered infected people, go check your AtRisk for more details
         </Typography>
       </Popover>
 
