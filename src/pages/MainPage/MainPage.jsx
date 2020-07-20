@@ -113,4 +113,4 @@ class MainPage extends Component{
   }
 }
 
-export MainPage;
+export default MainPage;
