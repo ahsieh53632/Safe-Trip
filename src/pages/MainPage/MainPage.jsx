@@ -13,6 +13,7 @@ import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
+import { cardTitle } from "assets/jss/material-kit-react.jsx";
 // import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 // import withStyles from "@material-ui/core/styles/withStyles";
 import image from "assets/img/bg.jpg";
@@ -20,7 +21,7 @@ import image from "assets/img/bg.jpg";
 class MainPage extends Component{
     state;
     cache_account;
-    const styles = {cardTitle, textCenter: {textAlign: "center"},textMuted: {color: "#6c757d"},};
+    styles;
   constructor(props){
       super(props);
       this.state = {
@@ -31,6 +32,7 @@ class MainPage extends Component{
           this.cache_account = window.localStorage.getItem("account");
         }
       }
+      this.styles = {cardTitle, textCenter: {textAlign: "center"},textMuted: {color: "#6c757d"},}
   }
 
   componentDidMount () {
