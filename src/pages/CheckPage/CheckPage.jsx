@@ -65,4 +65,4 @@ class CheckPage extends Component{
     }
 }
 
-export CheckPage;
+export default CheckPage;
