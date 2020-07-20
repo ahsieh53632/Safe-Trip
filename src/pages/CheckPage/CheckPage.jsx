@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {Link, navigate} from "gatsby";
-import withStyles from "@material-ui/core/styles/withStyles";
+// import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "../../components/CustomButtons/Button.jsx";
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+// import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import {
     ThemeProvider
   } from "@material-ui/styles"
@@ -65,4 +65,4 @@ class CheckPage extends Component{
     }
 }
 
-export default withStyles(loginPageStyle)(CheckPage);
+export CheckPage;
