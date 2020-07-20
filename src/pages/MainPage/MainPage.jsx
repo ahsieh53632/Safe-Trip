@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import {Link, navigate} from "gatsby";
 
 
-import "../../assets/scss/material-kit-react.scss?v=1.4.0";
+// import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
@@ -13,8 +13,8 @@ import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
-import withStyles from "@material-ui/core/styles/withStyles";
+// import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+// import withStyles from "@material-ui/core/styles/withStyles";
 import image from "assets/img/bg.jpg";
 
 class MainPage extends Component{
@@ -113,4 +113,4 @@ class MainPage extends Component{
   }
 }
 
-export default withStyles(loginPageStyle)(MainPage);
+export MainPage;
