@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 // import {Link, navigate} from "gatsby";
 
+
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
 import AddID from "./AddID";
 import CheckPersonal from "./CheckPersonal"
 
-import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
