@@ -26,6 +26,7 @@ module.exports = {
             stylesProvider: {
                 injectFirst: true,
             },
+            pathToStylesProvider: `assets/scss/material-kit-react.scss?v=1.4.0`,
           }
         },
         "gatsby-plugin-flow",
