@@ -42,3 +42,5 @@ const Check = (props) => {
     </Card>
   );
 }
+
+export default Check;
