@@ -16,20 +16,11 @@ import theme from "../../components/theme"
 
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
 
-const styles = {
-  cardTitle,
-  textCenter: {
-    textAlign: "center"
-  },
-  textMuted: {
-    color: "#6c757d"
-  },
-};
 
-const useStyles = makeStyles(styles);
 
-export default function Check() {
-  const classes = useStyles();
+
+const Check = (props) => {
+  const { classes } = props;
   return (
     <Card className={classes.textCenter}>
       <CardHeader color="danger">
