@@ -23,7 +23,9 @@ module.exports = {
                   }
                 ],
               },
-
+            },
+            stylesProvider: {
+                injectFirst: true,
             },
           }
         },
