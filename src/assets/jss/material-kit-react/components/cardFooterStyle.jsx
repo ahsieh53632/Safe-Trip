@@ -1,7 +1,7 @@
 const cardFooterStyle = {
   cardFooter: {
     display: "flex",
-    alignItems: "relative",
+    alignItems: "center",
     backgroundColor: "transparent",
     padding: "0.9375rem 7rem"
   }

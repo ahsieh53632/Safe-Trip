@@ -8,7 +8,6 @@ import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
 import AddID from "./AddID";
 import CheckPersonal from "./CheckPersonal"
-import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
@@ -21,9 +20,6 @@ import image from "assets/img/bg.jpg";
 class MainPage extends Component{
     state;
     cache_account;
-    styles;
-    useStyles;
-    check_classes;
   constructor(props){
       super(props);
       this.state = {
@@ -34,9 +30,7 @@ class MainPage extends Component{
           this.cache_account = window.localStorage.getItem("account");
         }
       }
-      this.styles = {cardTitle, textCenter: {textAlign: "center"},textMuted: {color: "#6c757d"},}
-      this.useStyles = makeStyles(this.styles);
-      this.check_classes = this.useStyles(); 
+      
   }
 
   componentDidMount () {
@@ -105,7 +99,7 @@ class MainPage extends Component{
           
           <CheckPersonal/>
 
-          <Check classes= { this.check_classes }/>
+          <Check/>
 
           <MyQRcode/>
 

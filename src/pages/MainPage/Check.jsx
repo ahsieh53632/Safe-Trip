@@ -11,16 +11,17 @@ import {Link, navigate} from "gatsby";
 import {
   ThemeProvider
 } from "@material-ui/styles"
-import { Typography } from "@material-ui/core"  
+import { Typography, withStyles } from "@material-ui/core"  
 import theme from "../../components/theme"
 
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
+import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
 
 
-
+const styles = {cardTitle, textCenter: {textAlign: "center"},textMuted: {color: "#6c757d"},}
 
 const Check = (props) => {
-  const { classes } = props;
+  const { classes, ...rest} = props; 
   return (
     <Card className={classes.textCenter}>
       <CardHeader color="danger">
@@ -43,4 +44,4 @@ const Check = (props) => {
   );
 }
 
-export default Check;
+export default withStyles(styles)(Check)

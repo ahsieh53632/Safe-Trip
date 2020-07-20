@@ -145,9 +145,9 @@ class LoginPage extends React.Component {
                 }}
                 >
                 <div className={classes.container} >
-                <GridContainer >
+                <GridContainer justify="center">
+                <GridItem  xs={12} sm={12} md={6}>
                 <Card className={classes[this.state.cardAnimation]}>
-                <GridItem>
                     <CardHeader color="warning" className={classes.cardHeader}>
                     <ThemeProvider theme={theme}>
                       <Typography variant="body1">Safe Trip login</Typography>
@@ -189,16 +189,16 @@ class LoginPage extends React.Component {
                         }}
                         />
                     </CardBody>
-                    <CardFooter>
+                    <GridContainer justify="center">
                     <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
-                        <Button type="submit">log in</Button>
+                        <Button type="submit" size="80px">log in</Button>
                     </form>
                     <form ref="form2" onSubmit={(e) => this.handleReg(e, this.state.account, this.state.password)}>
-                        <Button type="submit">register</Button>
+                        <Button type="submit" size="80px">register</Button>
                     </form>
-                    </CardFooter>
-                </GridItem>
+                    </GridContainer>
                 </Card>
+                </GridItem>
                 </GridContainer>
                 </div>
             </div>

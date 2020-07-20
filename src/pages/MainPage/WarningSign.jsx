@@ -5,15 +5,16 @@ import Typography from '@material-ui/core/Typography';
 import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
 import WarningIcon from '@material-ui/icons/Warning';
 import IconButton from '@material-ui/core/IconButton';
+import { withStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const styles = {
   popover: {
     pointerEvents: 'none',
   },
-}));
+};
 
-export default function Warning() {
-  const classes = useStyles();
+const Warning = (props) => {
+  const { classes, ...rest} = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handlePopoverOpen = (event) => {
@@ -82,3 +83,5 @@ export default function Warning() {
     </div>
   );
 }
+
+export default withStyles(styles)(Warning);

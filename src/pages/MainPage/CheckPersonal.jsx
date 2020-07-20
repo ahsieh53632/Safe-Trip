@@ -12,7 +12,7 @@ import {Link, navigate} from "gatsby";
 import {
   ThemeProvider
 } from "@material-ui/styles"
-import { Typography } from "@material-ui/core"  
+import { Typography, withStyles } from "@material-ui/core"  
 import theme from "../../components/theme"
 
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
@@ -27,10 +27,9 @@ const styles = {
   },
 };
 
-const useStyles = makeStyles(styles);
 
-export default function Check() {
-  const classes = useStyles();
+const CheckPersonal = (props) => {
+  const {classes, ...rest} = props;
   return (
     <Card className={classes.textCenter}>
       <CardHeader color="primary">
@@ -51,4 +50,7 @@ export default function Check() {
       </CardFooter>
     </Card>
   );
-}
+};
+
+
+export default withStyles(styles)(CheckPersonal);
