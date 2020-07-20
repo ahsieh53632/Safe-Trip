@@ -13,7 +13,6 @@ import {
 } from "@material-ui/styles"
 import { Typography } from "@material-ui/core"  
 import theme from "../../components/theme"
-import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
 
