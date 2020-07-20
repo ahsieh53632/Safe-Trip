@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import {Link} from "gatsby";
 import withStyles from "@material-ui/core/styles/withStyles";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx";
@@ -9,7 +11,6 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
 
 import QRcodeset from "./QRcodeset.jsx";
-import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 
 //生成qrcode頁面
 
