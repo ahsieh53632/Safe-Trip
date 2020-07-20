@@ -8,7 +8,7 @@ import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
 import AddID from "./AddID";
 import CheckPersonal from "./CheckPersonal"
-
+import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
@@ -20,6 +20,7 @@ import image from "assets/img/bg.jpg";
 class MainPage extends Component{
     state;
     cache_account;
+    const styles = {cardTitle, textCenter: {textAlign: "center"},textMuted: {color: "#6c757d"},};
   constructor(props){
       super(props);
       this.state = {
@@ -55,6 +56,8 @@ class MainPage extends Component{
  
 
   render() {
+    const useStyles = makeStyles(this.styles);
+    const check_classes = useStyles(); 
     if (this.state.alert) {
       var header = 
         <Header brand="Safe-Trip"
@@ -97,7 +100,7 @@ class MainPage extends Component{
           
           <CheckPersonal/>
 
-          <Check/>
+          <Check classes= { check_classes }/>
 
           <MyQRcode/>
 
