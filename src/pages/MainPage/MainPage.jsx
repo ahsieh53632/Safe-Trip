@@ -63,7 +63,6 @@ class MainPage extends Component{
     if (this.state.alert) {
       var header = 
         <Header brand="Safe-Trip"
-              rightLinks={<HeaderLinks />}
               fixed
               changeColorOnScroll={{
               height: 100,
@@ -71,9 +70,8 @@ class MainPage extends Component{
             }}/>
     } else {
       var header = 
-        <Header
+        <NoIconHeader
               brand="Safe-Trip"
-              rightLinks={<NoIconHeader />}
               fixed
               changeColorOnScroll={{
               height: 100,

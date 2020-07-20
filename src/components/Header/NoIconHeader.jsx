@@ -1,44 +1,142 @@
-/*eslint-disable*/
 import React from "react";
-// react components for routing our app without refresh
-import { Link } from "gatsby";
-
+import {Link, navigate} from "gatsby";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
-
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
+import Hidden from "@material-ui/core/Hidden";
+import Drawer from "@material-ui/core/Drawer";
+// @material-ui/icons
+import Menu from "@material-ui/icons/Menu";
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-
-import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx";
-
+import headerStyle from "assets/jss/material-kit-react/components/headerStyle.jsx";
 import WarningSign from "pages/MainPage/WarningSign.jsx"
 
-function HeaderLinks({ ...props }) {
-    const { classes } = props;
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobileOpen: false
+    };
+    this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
+    this.headerColorChange = this.headerColorChange.bind(this);
+  }
+  handleDrawerToggle() {
+    this.setState({ mobileOpen: !this.state.mobileOpen });
+  }
+  componentDidMount() {
+    if (this.props.changeColorOnScroll) {
+      window.addEventListener("scroll", this.headerColorChange);
+    }
+  }
+  headerColorChange() {
+    const { classes, color, changeColorOnScroll } = this.props;
+    const windowsScrollTop = typeof window !== 'undefined' && window.pageYOffset;
+    if (windowsScrollTop > changeColorOnScroll.height) {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.remove(classes[color]);
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add(classes[changeColorOnScroll.color]);
+    } else {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add(classes[color]);
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.remove(classes[changeColorOnScroll.color]);
+    }
+  }
+  componentWillUnmount() {
+    if (this.props.changeColorOnScroll) {
+      typeof window !== 'undefined' && window.removeEventListener("scroll", this.headerColorChange);
+    }
+  }
+  render() {
+    const {
+      classes,
+      color,
+      rightLinks,
+      leftLinks,
+      brand,
+      fixed,
+      absolute
+    } = this.props;
+    const appBarClasses = classNames({
+      [classes.appBar]: true,
+      [classes[color]]: color,
+      [classes.absolute]: absolute,
+      [classes.fixed]: fixed
+    });
+    const brandComponent = <Link to="../../MainPage/MainPage"><Button className={classes.title}>{brand}</Button></Link>;
     return (
-        <List className={classes.list}>
-            {/* <ListItem className={classes.listItem}>
-                <Link to="/main-page" className={classes.navLink}>
-                    <Home className={classes.icons} />
-                    Home
-                </Link>
-            </ListItem> */}
-
-            {/* <ListItem className={classes.listItem}>
-            </ListItem> */}
-            {/* <ListItem className={classes.listItem}>
-                <MapDialog />
-            </ListItem> */}
-
-            <ListItem className={classes.listItem}>
-            </ListItem>
-            
-        </List>
+      <AppBar className={appBarClasses}>
+        <Toolbar className={classes.container}>
+          {leftLinks !== undefined ? brandComponent : null}
+          <div className={classes.flex}>
+            {leftLinks !== undefined ? (
+              <Hidden smDown implementation="css">
+                {leftLinks}
+              </Hidden>
+            ) : (
+              brandComponent
+            )}
+          </div>
+        </Toolbar>
+      </AppBar>
     );
+  }
 }
 
-export default withStyles(headerLinksStyle)(HeaderLinks);
+Header.defaultProp = {
+  color: "white"
+};
+
+Header.propTypes = {
+  classes: PropTypes.object.isRequired,
+  color: PropTypes.oneOf([
+    "primary",
+    "info",
+    "success",
+    "warning",
+    "danger",
+    "transparent",
+    "white",
+    "rose",
+    "dark"
+  ]),
+  rightLinks: PropTypes.node,
+  leftLinks: PropTypes.node,
+  brand: PropTypes.string,
+  fixed: PropTypes.bool,
+  absolute: PropTypes.bool,
+  // this will cause the sidebar to change the color from
+  // this.props.color (see above) to changeColorOnScroll.color
+  // when the window.pageYOffset is heigher or equal to
+  // changeColorOnScroll.height and then when it is smaller than
+  // changeColorOnScroll.height change it back to
+  // this.props.color (see above)
+  changeColorOnScroll: PropTypes.shape({
+    height: PropTypes.number.isRequired,
+    color: PropTypes.oneOf([
+      "primary",
+      "info",
+      "success",
+      "warning",
+      "danger",
+      "transparent",
+      "white",
+      "rose",
+      "dark"
+    ]).isRequired
+  })
+};
+
+export default withStyles(headerStyle)(Header);
