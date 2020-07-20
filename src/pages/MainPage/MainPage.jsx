@@ -22,6 +22,8 @@ class MainPage extends Component{
     state;
     cache_account;
     styles;
+    useStyles;
+    check_classes;
   constructor(props){
       super(props);
       this.state = {
@@ -33,6 +35,8 @@ class MainPage extends Component{
         }
       }
       this.styles = {cardTitle, textCenter: {textAlign: "center"},textMuted: {color: "#6c757d"},}
+      this.useStyles = makeStyles(this.styles);
+      this.check_classes = this.useStyles(); 
   }
 
   componentDidMount () {
@@ -58,8 +62,7 @@ class MainPage extends Component{
  
 
   render() {
-    const useStyles = makeStyles(this.styles);
-    const check_classes = useStyles(); 
+    
     if (this.state.alert) {
       var header = 
         <Header brand="Safe-Trip"
@@ -102,7 +105,7 @@ class MainPage extends Component{
           
           <CheckPersonal/>
 
-          <Check classes= { check_classes }/>
+          <Check classes= { this.check_classes }/>
 
           <MyQRcode/>
 
