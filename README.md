@@ -4,7 +4,7 @@ Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
 ## https://safetripsite.herokuapp.com
 # Description
 
-A project designed to help track if you have had contacte with any infected person and also making sure you don't need to worry about catching the virus while being outside :).
+A project designed to help track if you have had contact with any infected person and also making sure you don't need to worry about catching the virus while being outside :).
 
 # Built With
 Built Front End with React.js <br/>
