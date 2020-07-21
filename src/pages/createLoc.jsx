@@ -21,7 +21,7 @@ const ScanQRLocation = ({ search }) => {
 var Type = objs.type;
 var locationName = objs.locationName;
 var address = objs.address;
-var account = objs.account;
+var account=window.localStorage.getItem("account");
 var Date = objs.Date;
   
   if (typeof window !== 'undefined') {

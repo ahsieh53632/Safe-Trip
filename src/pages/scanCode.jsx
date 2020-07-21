@@ -11,7 +11,7 @@ const ScanQR = ({ search }) => {
   let isMounted = true;
   const { info } = search;
   console.log(info)
-  var objs = {"type": "", "locationName": "", "address": "","account":"","date":"hihi"};
+  var objs = {"type": "", "locationName": "", "address": "","otherpersonid":"","date":"hihi"};
   if (typeof info !== 'undefined') {
     objs = JSON.parse(info);
   }
@@ -37,7 +37,7 @@ const ScanQR = ({ search }) => {
             },
             body: JSON.stringify({
                 "account": thisid,
-                "locationId": Number.parseInt(locationid),
+                "locationId": locationid,
                 "date": date
             })
         })
@@ -63,7 +63,7 @@ const ScanQR = ({ search }) => {
             },
             body: JSON.stringify({
                 "account": thisid,
-                "locationId": Number.parseInt(locationid),
+                "locationId": locationid,
                 "otherpid": otherpersonid,
                 "date": date
             })
