@@ -1,37 +1,42 @@
 import React, { Component } from "react";
 // import {Link, navigate} from "gatsby";
 
+
+// import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
 import AddID from "./AddID";
-import CheckPersonal from "./CheckPersonal";
-
+import CheckPersonal from "./CheckPersonal"
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import NoIconHeader from "components/Header/NoIconHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+import { cardTitle } from "assets/jss/material-kit-react.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 import withStyles from "@material-ui/core/styles/withStyles";
 import image from "assets/img/bg.jpg";
-
+import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage.jsx";
 
 class MainPage extends Component{
     state;
-
+    cache_account;
   constructor(props){
       super(props);
       this.state = {
-          Scan: false,
-          Check: false,
-          MyQRcode: false,
-          UpadteInfo: false,
           alert: false,
       };
+      if (typeof window !== 'undefined') {
+        if (window.localStorage != null) {
+          this.cache_account = window.localStorage.getItem("account");
+        }
+      }
+      
   }
 
   componentDidMount () {
-    fetch('http://localhost:3000/CheckPage/check', {
+    fetch('https://safe-trip.herokuapp.com/MainPage/alert', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -43,8 +48,9 @@ class MainPage extends Component{
         })
         .then(res => res.json())
         .then(d => {
+          console.log(d);
             if (d.alert) {
-              this.state.alert = true
+              this.setState({alert: true})
             }
       })
   }
@@ -52,10 +58,11 @@ class MainPage extends Component{
  
 
   render() {
+    const { classes, ...rest } = this.props;
+    
     if (this.state.alert) {
       var header = 
         <Header brand="Safe-Trip"
-              rightLinks={<HeaderLinks />}
               fixed
               changeColorOnScroll={{
               height: 100,
@@ -63,9 +70,8 @@ class MainPage extends Component{
             }}/>
     } else {
       var header = 
-        <Header
+        <NoIconHeader
               brand="Safe-Trip"
-              rightLinks={<NoIconHeader />}
               fixed
               changeColorOnScroll={{
               height: 100,
@@ -91,7 +97,9 @@ class MainPage extends Component{
             alignItems: "center",
           }}
         >
-          
+          <div className={classes.container}>
+          <GridContainer justify="center">
+          <GridItem xs={12} sm={12} md={10}> 
           <CheckPersonal/>
 
           <Check/>
@@ -103,6 +111,9 @@ class MainPage extends Component{
           <AddID/>
 
           <Footer/>
+          </GridItem>
+          </GridContainer>
+          </div>
 
         </div>
         </div> 
@@ -110,4 +121,4 @@ class MainPage extends Component{
   }
 }
 
-export default withStyles(loginPageStyle)(MainPage);
+export default withStyles(landingPageStyle)(MainPage);

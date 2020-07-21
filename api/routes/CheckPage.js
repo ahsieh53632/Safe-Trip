@@ -3,13 +3,12 @@ var router = express.Router();
 var mysql = require('mysql')
 
 const con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '!Alex3638',
-  database: 'safe-trip'
+  host: 'x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user: 'm2u3s9mofhfe0aj0',
+  password: 'j1zx61veixj51fir',
+  database: 'akqd2l4yrrd13wix'
 });
 
-console.log('connect');
 
 /* GET home page. */
 router.post('/check', function(req, res) {
@@ -31,6 +30,7 @@ router.post('/check', function(req, res) {
   con.query(query, [account, account], function(err, r, fields) {
     if (err) {
       console.log(err);
+      res.end(JSON.stringify({"error": true}));
     } else {
       console.log('suc');
       console.log(r);

@@ -1,27 +1,31 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
-import {createMemoryHistory} from "history";
-import {Route, HashRouter as Router, Switch} from "react-router-dom";
-import ReactDOM from 'react-dom';
 import 'typeface-roboto'
+import { Router } from "@reach/router"
 
-import createBrowserHistory from 'history/createBrowserHistory';
+
 import "assets/scss/material-kit-react.scss?v=1.4.0";
 import 'typeface-roboto';
 import 'typeface-roboto-slab';
 
-
 import MainPage from "./MainPage/MainPage.jsx"
 import LoginPage from "./LoginPage.jsx";
+import ScanQR from './scanCode';
+import CheckPage from './CheckPage/CheckPage'
+
 
 export default () => (
+  <div>
+  <header>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  </header>
   <Router>
-    <Switch>
-      <Route exact path="/" component={LoginPage} />
-      <Route path="/scanCode/:id">
-      </Route>
-    </Switch>
+    <MainPage path="/MainPage/MainPage" />
+    <ScanQR path="/ScanQR" />
+    <CheckPage path="/CheckPage/CheckPage" />
+    <LoginPage path="/" />
   </Router>
+  </div>
 );
 
 // class Index extends React.Component {

@@ -5,7 +5,6 @@ module.exports = {
     },
     plugins: [
         "gatsby-plugin-resolve-src",
-        "gatsby-plugin-react-helmet",
         {
         resolve: `gatsby-plugin-material-ui`,
         options: {
@@ -23,8 +22,11 @@ module.exports = {
                   }
                 ],
               },
-
             },
+            stylesProvider: {
+                injectFirst: true,
+            },
+            pathToStylesProvider: `assets/scss/material-kit-react.scss?v=1.4.0`,
           }
         },
         "gatsby-plugin-flow",
@@ -89,5 +91,6 @@ module.exports = {
                 icon: "static/dog.png", // This path is relative to the root of the site.
             },
         },
+        "gatsby-plugin-react-helmet",
         "gatsby-plugin-offline"],
         };

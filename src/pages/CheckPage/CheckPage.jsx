@@ -1,29 +1,31 @@
 import React, { Component } from "react";
 import {Link, navigate} from "gatsby";
-import withStyles from "@material-ui/core/styles/withStyles";
+// import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "../../components/CustomButtons/Button.jsx";
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
+// import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
 import {
     ThemeProvider
   } from "@material-ui/styles"
   import { Typography } from "@material-ui/core"  
   import theme from "../../components/theme"
-
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 
 class CheckPage extends Component{
     cache_account;
     constructor(props) {
         super(props);
         this.state = { data: [], };
-        if (window.localStorage != null) {
-            this.cache_account = window.localStorage.getItem("account")
-            console.log(this.cache_account)
+        if (typeof window !== 'undefined') {
+            if (window.localStorage != null) {
+                this.cache_account = window.localStorage.getItem("account")
+                console.log(this.cache_account)
+            }
         }
     }
     
     componentDidMount () {
         console.log('fectching check')
-        fetch('http://localhost:3000/CheckPage/check', {
+        fetch('https://safe-trip.herokuapp.com/CheckPage/check', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -63,4 +65,4 @@ class CheckPage extends Component{
     }
 }
 
-export default withStyles(loginPageStyle)(CheckPage);
+export default CheckPage;

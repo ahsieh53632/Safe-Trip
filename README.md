@@ -1,15 +1,20 @@
-# Safe-Trip: 放心出遊!:
-### English version README: check README_eng.md
-免安裝, 不論出遊還是搭Uber 只需透過手機內建相機掃描QRCODE就能隨時確保自己遠離疫情
+# Safe-Trip: Enjoy going anywhere without worring about CoVID-19!:
+How do you know if your Uber driver have had contact with someone who has CoVID-19 or maybe is infected himself/herself? <br />
+How do you know if it's safe to go somewhere you want during this pendamic? <br />
+consider using our web app!
+### Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
+#### all you need is your smartphone's builtin camera, record where you've been/check if someone you met is "corona free" in 3 seconds!
 
-
+# Link
+## https://safetripsite.herokuapp.com
 # Description
-不須下載任何app, 只需要註冊一次帳號, 即可透過手機內建相機掃描QRCODE, 隨時記錄所到之處, 也可在搭乘Uber, 住宿AirBnb, 出遊, <br/>
-或跟別人見面時確保對方並沒有接觸過或出現過患者, 放心享受旅遊/與人互動的當下順便保護自己遠離Covid-19
+
+A project designed to help tracking if you have had contact with anyone who has coid-19 and to also help you make sure you stay away from the virus while going outdoors :).
 
 # Built With
-前端使用 React.js, 後端使用 Node.js + MySQL, 也使用Gatsby創建React app
-
+Built Front End with React.js <br/>
+Built Back End with Node.js and MySQL <br />
+Gatsby
 
 # Structure
 ###### BackEnd: /api <br/>
@@ -17,37 +22,39 @@
 
 # Pre-req/installation guide
 Node.js <br/>
-安裝Dependicies:
- `npm install`
+install all dependicies: <br />
+ run `npm install`
  ## BackEnd config:
-此project 的backend server 架設在 localhost 上面, 需要安裝Mysql, 手動設置connection 並跑 /api/create_db.sql 來創建需要的table <br />
+ If you wish to test this on local host:
+ set up mysql connection in api/app.js, and change all api calls (fetch) to localhost\
+We've provided create_db.sql in /api to help you build all tables you need <br />
 `Table: person, beento, encounter, location` <br/>
-跑server: <br/>
+start server: <br/>
 `gatsby develop` <br />
-跑api: <br/>
-進到api folder <br/>
+start api server (): <br/>
+goto /api  <br/>
 `npm install` <br/>
 `npm start`
 
-# Functinoality:
-  - Login/Register: 第一次使用需要註冊帳號 (api 要有運作), 之後便會自己登入
-  - 掃描QRCODE: 不須開啟網頁或安裝App, 使用手機相機掃描特定格式QRCODE後 會自動call api 並update 資料
-    - ###### 因DB設在localhost 上面, 如需測試請參考下面
-    - 人/Uber: 會告知你這個人或Uber司機是否最近接觸過染病人士, 並記錄雙方的接觸
-    - 景點: 會記錄你在今天去過這個位置
-  - AtRisk: 顯示最近去的地方有沒有出現疫情或見過的人有沒有生病 (不會顯示染病者個人資訊)
-  - MyQRCODE: 生成個人的QRCODE 讓人掃描, 店家或景點也可以生成自己的QRCODE
-    - ###### 註: 得到肺炎與否透過醫生端QRCODE update 無法透過網站更新
-  - UpdateInfo: 更新個人資料 (名字, 電話, 地址等)
-  - AddID: 無法掃描QRCODE 情況下手動更新到Database
-    - ###### 註: 目前只有前端 連結api 部分沒有做
-  - Alert: 若最近有接觸過疫情, 會在MainPage 顯示一個提醒 (ICON)
-  - MainPage: 主頁面
-  - ViewInfo: 檢視個人資料
+# Functionality:
+  - Login/Register: You will need to register the first time, and it should automaticaly log you in after that
+  - scan QRCODE: Don't need to open any website or install any apps, just scan it with your builtin camera and our website will make api calls automatically
+    - ######  if you wish to test this locally check our guide bellow
+      - Encounters/Uber: will show you if this individual can be carrying the virus, and store this encounter to our database
+      - Places: will store data in our database that indicates you've been to this location at the date
+  - AtRisk: will show when and where you have encountered infected individuals or the place you both have went (Does not show their info)
+  - MyQRCODE: Generate your personal QRCODE to allow others to scan or create place QRCODE tourists/citizens to scan
+    - ###### Note: updating you're condition (i.e. if you're infected or atRist) will only be possibe via a doctor, also through scanning a QRCODE
+  - UpdateInfo: Updating your personal info (name, phone, address etc.)
+  - AddID: allow user to store data to our database for situations where you can't scan QRCODE or running the web on a computer
+    - ###### Note: currently we have only finished the front end part, not linked to api yet
+  - Alert: will show an alert on home page if you are at risk
+  - MainPage: MainPage
+  - ViewInfo: view personal info
 
 # Test QRCODE api calls locally:
-## 人與人見面 (or Uber, AirBnb):
- - 前往 /scanCode?info={"type": "encounter", "otherpersonid": "接觸人帳號", "locationid": "位置id (在資料庫上的location)", "date": "日期"}
-## 景點:
- - 前往 /scanCode?info={"type": "beento", "locationid": "位置id (在資料庫上的location)", "date": "日期"}
+## Encounters (or Uber, AirBnb):
+ - navigate to /scanCode?info={"type": "encounter", "otherpersonid": "the username of the otherperson u met (string)", "locationid": "location id (stored on database, int)", "date": "the date"}
+## Places:
+ - navigate to /scanCode?info={"type": "beento", "locationid": "location id (stored on database, type int)", "date": "the date"}
 

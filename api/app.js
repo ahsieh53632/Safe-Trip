@@ -13,12 +13,13 @@ var MainPageRouter = require('./routes/MainPage')
 var QRRouter = require('./routes/QRPage')
 var uuid = require('uuid');
 var app = express();
+var InfoRouter = require('./routes/PersonInfo')
 
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '!Alex3638',
-  database: 'safe-trip'
+  host: 'x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user: 'm2u3s9mofhfe0aj0',
+  password: 'j1zx61veixj51fir',
+  database: 'akqd2l4yrrd13wix'
 });
 
 
@@ -47,12 +48,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/LoginPage', LoginRouter);
 app.use('/CheckPage', CheckRouter);
 app.use('/scanCode', QRRouter);
 app.use('/MainPage', MainPageRouter);
+app.use('/Person', InfoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

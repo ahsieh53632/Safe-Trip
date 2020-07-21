@@ -20,11 +20,11 @@ import {
   } from "@material-ui/styles"
 import { Typography } from "@material-ui/core"  
 import theme from "../components/theme"
-
+import "assets/scss/material-kit-react.scss?v=1.4.0";
 import image from "assets/img/1.jpg";
 class LoginPage extends React.Component {
     localStorage;
-    state = {account: "", password: ""}
+    state = {account: "", password: "", cardAnimation: "cardHidden"}
     constructor(props) {
         super(props);
         this.localStorage = null;
@@ -37,7 +37,7 @@ class LoginPage extends React.Component {
             console.log(this.localStorage);
             var cache_account = this.localStorage.getItem("account");
             var cache_pwd = this.localStorage.getItem("password");
-            fetch('http://localhost:3000/LoginPage/auth', {
+            fetch('https://safe-trip.herokuapp.com/LoginPage/auth', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -61,7 +61,7 @@ class LoginPage extends React.Component {
         event.preventDefault()
         console.log(account);
         console.log(password);
-        fetch('http://localhost:3000/LoginPage/auth', {
+        fetch('https://safe-trip.herokuapp.com/LoginPage/auth', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -105,7 +105,7 @@ class LoginPage extends React.Component {
 
     handleReg (event, account, password)  {
         event.preventDefault()
-        fetch('http://localhost:3000/LoginPage/reg', {
+        fetch('https://safe-trip.herokuapp.com/LoginPage/reg', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -144,10 +144,10 @@ class LoginPage extends React.Component {
                     backgroundPosition: "top center"
                 }}
                 >
-                <div className={classes.container}>
-                <GridContainer>
+                <div className={classes.container} >
+                <GridContainer justify="center">
+                <GridItem  xs={12} sm={12} md={6}>
                 <Card className={classes[this.state.cardAnimation]}>
-                <GridItem>
                     <CardHeader color="warning" className={classes.cardHeader}>
                     <ThemeProvider theme={theme}>
                       <Typography variant="body1">Safe Trip login</Typography>
@@ -189,16 +189,16 @@ class LoginPage extends React.Component {
                         }}
                         />
                     </CardBody>
-                    <CardFooter>
+                    <GridContainer justify="center">
                     <form ref="form" onSubmit={(e) => this.handleSubmit(e, this.state.account, this.state.password)}>
-                        <Button type="submit">log in</Button>
+                        <Button type="submit" size="80px">log in</Button>
                     </form>
                     <form ref="form2" onSubmit={(e) => this.handleReg(e, this.state.account, this.state.password)}>
-                        <Button type="submit">register</Button>
+                        <Button type="submit" size="80px">register</Button>
                     </form>
-                    </CardFooter>
-                </GridItem>
+                    </GridContainer>
                 </Card>
+                </GridItem>
                 </GridContainer>
                 </div>
             </div>

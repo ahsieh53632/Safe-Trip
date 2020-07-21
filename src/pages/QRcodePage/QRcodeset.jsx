@@ -5,7 +5,7 @@ import CardBody from "../../components/Card/CardBody.jsx";
 import CardHeader from "../../components/Card/CardHeader.jsx";
 import CardFooter from "../../components/Card/CardFooter.jsx";
 import {ThemeProvider} from "@material-ui/styles"
-import { Typography } from "@material-ui/core"  
+import { Typography, withStyles } from "@material-ui/core"  
 import theme from "../../components/theme"
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
 
@@ -26,11 +26,10 @@ const styles = {
     },
   };
 
-const useStyles = makeStyles(styles);
 
-export default function QRcodeset(){
+const QRcodeset = (props) => {
 
-    const classes = useStyles();
+    const { classes, ...rest } = props;
 
     return (
 
@@ -52,4 +51,6 @@ export default function QRcodeset(){
 
       );
       
-}
+};
+
+export default withStyles(styles)(QRcodeset);

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import {Link} from "gatsby";
 import withStyles from "@material-ui/core/styles/withStyles";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx";
@@ -6,6 +8,7 @@ import Button from "components/CustomButtons/Button.jsx";
 import image from "assets/img/1.jpg";
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import NoIconHeader from "components/Header/NoIconHeader.jsx";
 
 import QRcodeset from "./QRcodeset.jsx";
 
@@ -21,9 +24,8 @@ class CreateQRcode extends Component{
     render() {
       return(
         <div>
-          <Header
+          <NoIconHeader
             brand="Safe-Trip"
-            rightLinks={<HeaderLinks />}
             fixed
             changeColorOnScroll={{
             height: 100,

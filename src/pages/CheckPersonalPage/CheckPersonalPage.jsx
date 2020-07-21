@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import {Link, navigate} from "gatsby";
+
+import Header from "components/Header/Header.jsx";
+import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import NoIconHeader from "components/Header/NoIconHeader.jsx";
 import Button from "../../components/CustomButtons/Button.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx"
@@ -14,19 +18,52 @@ import image from "assets/img/bg.jpg";
 import CheckPersonalname from"./CheckPersonalname.jsx"
 import CheckPersonalPhone from"./CheckPersonalPhone.jsx"
 import CheckPersonalStreet from"./CheckPersonalStreet.jsx"
-
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 
 
 
 
 class CheckPersonalPage extends Component{
-
+    cache_account;
     constructor(props){
         super(props);
+        if (typeof window !== 'undefined') {
+            if (window.localStorage != null) {
+                this.cache_account = window.localStorage.getItem("account");
+            }
+        }
+        this.state = {name: "", phone: "", address: ""};
+    }
+
+    componentDidMount() {
+        fetch('https://safe-trip.herokuapp.com/Person/info', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "account": this.cache_account,
+        })
+        })
+        .then(res => res.json())
+        .then(d => {
+            console.log(d);
+        this.setState({name: d[0].name, phone: d[0].phone, address: d[0].address});
+            
+      })
     }
 
     render(){
         return(
+            <div>
+                <NoIconHeader
+                    brand="Safe-Trip"
+                    fixed
+                    changeColorOnScroll={{
+                    height: 100,
+                    color: "white",
+                    }}/>
             <div
               style={{
                 backgroundImage: "url(" + image + ")",
@@ -42,11 +79,11 @@ class CheckPersonalPage extends Component{
                 alignItems: "center",
               }}>
 
-            <CheckPersonalname/>
+            <CheckPersonalname name={this.state.name}/>
 
-            <CheckPersonalPhone/>
+            <CheckPersonalPhone Phone={this.state.phone}/>
 
-            <CheckPersonalStreet/>
+            <CheckPersonalStreet Street={this.state.address}/>
 
             <Link to="../../MainPage/MainPage">
                 <Button 
@@ -68,6 +105,7 @@ class CheckPersonalPage extends Component{
                 </ThemeProvider>
             </Button>
             <Footer/>
+        </div>
         </div>
         )
     }

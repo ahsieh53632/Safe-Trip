@@ -22,15 +22,7 @@ import WarningSign from "pages/MainPage/WarningSign.jsx"
 function HeaderLinks({ ...props }) {
     const { classes } = props;
     return (
-        <List className={classes.list}>
-
-            <ListItem 
-            className={classes.listItem}
-            >
-                <WarningSign/>
-            </ListItem>
-            
-        </List>
+            <WarningSign/>
     );
 }
 

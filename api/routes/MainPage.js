@@ -3,10 +3,10 @@ var router = express.Router();
 var mysql = require('mysql')
 
 const con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '!Alex3638',
-  database: 'safe-trip'
+  host: 'x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user: 'm2u3s9mofhfe0aj0',
+  password: 'j1zx61veixj51fir',
+  database: 'akqd2l4yrrd13wix'
 });
 
 
@@ -30,6 +30,7 @@ router.post('/alert', function(req, res) {
     if (err) {
       console.log(err);
     }
+    console.log(r);
     if (r.length > 0) {
       console.log('success')
       res.end(JSON.stringify({ "alert": true }));

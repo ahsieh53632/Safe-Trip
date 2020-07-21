@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx";
-
+import "../../assets/scss/material-kit-react.scss?v=1.4.0";
 import QRcodeID from "./QRcodeID.jsx";
 
 //create URL
@@ -9,16 +9,22 @@ import QRcodeID from "./QRcodeID.jsx";
 class CreateURL extends Component{
 
     localStorage;
-
+    cache_account;
     constructor(props) {
 
-        super(props); 
-        this.localStorage = window.localStorage;
-        var cache_account = this.localStorage.getItem("account"); 
-  
+        super(props);
+        if (typeof window !== 'undefined') { 
+            if (window.localStorage != null) {
+                this.localStorage = window.localStorage;
+                this.cache_account = this.localStorage.getItem("account");
+            }
+             
+        } else {
+
+        }
         this.state={
 
-            URL:"http://localhost:8000/scanCode?info={ \"type\": \"encounter\", \"locationid\": 1,\"otherpersonid\":"+"\""+cache_account+"\""+"}"
+            URL:"https://safetripsite.herokuapp.com/scanCode?info={ \"type\": \"encounter\", \"locationid\": 1,\"otherpersonid\":"+"\""+this.cache_account+"\""+"}"
 
         }   
       }

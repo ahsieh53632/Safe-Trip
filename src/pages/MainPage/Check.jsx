@@ -1,6 +1,6 @@
 import React from "react";
 // material-ui components
-import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
+// import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
 // core components
 import Card from "../../components/Card/Card.jsx";
 import CardBody from "../../components/Card/CardBody.jsx";
@@ -11,25 +11,17 @@ import {Link, navigate} from "gatsby";
 import {
   ThemeProvider
 } from "@material-ui/styles"
-import { Typography } from "@material-ui/core"  
+import { Typography, withStyles } from "@material-ui/core"  
 import theme from "../../components/theme"
 
 import { cardTitle } from "assets/jss/material-kit-react.jsx";
+import makeStyles from "@material-ui/styles/makeStyles/makeStyles.js";
 
-const styles = {
-  cardTitle,
-  textCenter: {
-    textAlign: "center"
-  },
-  textMuted: {
-    color: "#6c757d"
-  },
-};
 
-const useStyles = makeStyles(styles);
+const styles = {cardTitle, textCenter: {textAlign: "center"},textMuted: {color: "#6c757d"},}
 
-export default function Check() {
-  const classes = useStyles();
+const Check = (props) => {
+  const { classes, ...rest} = props; 
   return (
     <Card className={classes.textCenter}>
       <CardHeader color="danger">
@@ -51,3 +43,5 @@ export default function Check() {
     </Card>
   );
 }
+
+export default withStyles(styles)(Check)
