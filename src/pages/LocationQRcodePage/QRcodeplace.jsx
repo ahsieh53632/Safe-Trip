@@ -19,6 +19,8 @@ class QRcodeplace extends Component{
            return (
                 <div>
                     <MyQRcode value={this.props.sendplace} ></MyQRcode>
+                    <div>生成網址:{this.props.sendplace}</div>
+                    
                 </div>
             )
 
