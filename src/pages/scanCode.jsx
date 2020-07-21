@@ -20,72 +20,75 @@ const ScanQR = ({ search }) => {
   var locationid = objs.locationName;
   var otherpersonid = objs.otherpersonid;
   var date = objs.date;
-  if (window.localStorage != null) {
-    console.log(window.localStorage)
-    var thisid = window.localStorage.getItem("account")
-  } else {
-    alert('please login or register than scan qr code again!');
-    navigate('/')
-  }
-  if (type === "beento") {
-    console.log('adding type: beento');
-    fetch('https://safe-trip.herokuapp.com/scanCode/beento', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "account": thisid,
-                "locationId": Number.parseInt(locationid),
-                "date": date
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data.success) {
-                alert('successfully ADDED to beento table')
-                console.log('success');
-                window.location = '/MainPage/MainPage'
-            } else {
-                alert('FAILED! please relogin or register');
-                window.location = '/'
-            }
-        })
-  } else {
-    console.log('adding type: encounter');
-    fetch('https://safe-trip.herokuapp.com/scanCode/encounter', {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "account": thisid,
-                "locationId": Number.parseInt(locationid),
-                "otherpid": otherpersonid,
-                "date": date
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data.success) {
-              if (data.cond === "RISKY") {
-                alert("This person is at RISK!!!!!")
+
+  if (typeof window !== 'undefined') {
+    if (window.localStorage != null) {
+      console.log(window.localStorage)
+      var thisid = window.localStorage.getItem("account")
+    } else {
+      alert('please login or register than scan qr code again!');
+      navigate('/')
+    }
+    if (type === "beento") {
+      console.log('adding type: beento');
+      fetch('https://safe-trip.herokuapp.com/scanCode/beento', {
+              method: 'POST',
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  "account": thisid,
+                  "locationId": Number.parseInt(locationid),
+                  "date": date
+              })
+          })
+          .then(res => res.json())
+          .then(data => {
+              console.log(data);
+              if (data.success) {
+                  alert('successfully ADDED to beento table')
+                  console.log('success');
+                  window.location = '/MainPage/MainPage'
               } else {
-                alert('SAFE! successfully ADDED to encounter table')
+                  alert('FAILED! please relogin or register');
+                  window.location = '/'
               }
-              console.log('success');
-              isMounted = false;
-              window.location = '/MainPage/MainPage'
-            } else {
-              alert('FAILED! please relogin or register');
-              isMounted = false;
-              window.location = '/LoginPage'
-            }
-        })
+          })
+    } else {
+      console.log('adding type: encounter');
+      fetch('https://safe-trip.herokuapp.com/scanCode/encounter', {
+              method: 'PUT',
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  "account": thisid,
+                  "locationId": Number.parseInt(locationid),
+                  "otherpid": otherpersonid,
+                  "date": date
+              })
+          })
+          .then(res => res.json())
+          .then(data => {
+              console.log(data);
+              if (data.success) {
+                if (data.cond === "RISKY") {
+                  alert("This person is at RISK!!!!!")
+                } else {
+                  alert('SAFE! successfully ADDED to encounter table')
+                }
+                console.log('success');
+                isMounted = false;
+                window.location = '/MainPage/MainPage'
+              } else {
+                alert('FAILED! please relogin or register');
+                isMounted = false;
+                window.location = '/LoginPage'
+              }
+          })
+    }
   }
 return <div><h1>type:{type}</h1><p>yourid: {thisid}</p><p>locationid: {locationid}</p></div>
 }
