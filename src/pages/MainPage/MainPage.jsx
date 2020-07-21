@@ -18,7 +18,8 @@ import GridItem from "components/Grid/GridItem.jsx";
 import withStyles from "@material-ui/core/styles/withStyles";
 import image from "assets/img/bg.jpg";
 import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage.jsx";
-
+import Button from "../../components/CustomButtons/Button.jsx";
+import { navigate }from "gatsby";
 class MainPage extends Component{
     state;
     cache_account;
@@ -55,7 +56,17 @@ class MainPage extends Component{
       })
   }
 
- 
+  
+  handleLogOut() {
+    if(typeof window !== 'undefined') {
+      if (window.localStorage != null) {
+        window.localStorage.setItem("account", null);
+        window.localStorage.setItem("password", null);
+      }
+    }
+
+    navigate('/');
+  }
 
   render() {
     const { classes, ...rest } = this.props;
@@ -111,10 +122,16 @@ class MainPage extends Component{
           <AddID/>
 
           <Footer/>
+
+          <Button color="primary" onClick={(this.handleLogOut)}>
+            LOG OUT!
+          </Button>
+
           </GridItem>
           </GridContainer>
           </div>
 
+          
         </div>
         </div> 
     )
