@@ -1,7 +1,7 @@
 # Safe-Trip: Enjoy going anywhere without worring if you will catch CoVID-19!:
-免安裝, 不論出遊還是搭Uber 只需透過手機內建相機掃描QRCODE就能隨時確保自己遠離疫情
 Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
-
+# Link
+##　safetripsite.herokuapp.com
 # Description
 
 A project designed to help track if you have contacted any infected person and also making sure you don't need to worry about catching the virus while being outside :).
@@ -33,11 +33,11 @@ start api server: <br/>
 # Functinoality:
   - Login/Register: You will need to register the first time, and it should automaticaly log you in after that
   - scan QRCODE: Don't need to open any website or install any apps, just scan it with your builtin camera and our website will make api calls automatically
-    - ###### Since our backend is currently running on LocalHost, if you wish to test this check our guide bellow
-      - Encounters/Uber: will show you if this individual may have the virus, and store this encounter to our database
-      - Places: will store data in our database that indicates you've been to this location at the specific date
+    - ######  if you wish to test this locally check our guide bellow
+      - Encounters/Uber: will show you if this individual can be carrying the virus, and store this encounter to our database
+      - Places: will store data in our database that indicates you've been to this location at the date
   - AtRisk: will show when and where you have encountered infected individuals or the place you both have went (不會顯示染病者個人資訊)
-  - MyQRCODE: Generate your personal QRCODE to allow others to scan
+  - MyQRCODE: Generate your personal QRCODE to allow others to scan or create QRCODE or places for tourists/citizens to scan
     - ###### Note: updating you're condition (i.e. if you're infected or atRist) will only be possibe via a doctor, also through scanning a QRCODE
   - UpdateInfo: Updating your personal info (name, phone, address etc.)
   - AddID: allow user to store data to our database for situations where you can't scan QRCODE or running the web on a computer
@@ -48,7 +48,7 @@ start api server: <br/>
 
 # Test QRCODE api calls locally:
 ## Encounters (or Uber, AirBnb):
- - 前往 /scanCode?info={"type": "encounter", "otherpersonid": "the account of the individual", "locationid": "location id (stored on database)", "date": "the date"}
+ - 前往 /scanCode?info={"type": "encounter", "otherpersonid": "the username of the otherperson u met (string)", "locationid": "location id (stored on database, int)", "date": "the date"}
 ## Places:
- - 前往 /scanCode?info={"type": "beento", "locationid": "location id (stored on database)", "date": "the date"}
+ - 前往 /scanCode?info={"type": "beento", "locationid": "location id (stored on database, type int)", "date": "the date"}
 
