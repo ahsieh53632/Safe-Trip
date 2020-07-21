@@ -11,7 +11,7 @@ const ScanQR = ({ search }) => {
   let isMounted = true;
   const { info } = search;
   console.log(info)
-  var objs = {"Type": "", "locationName": "", "address": "","account":cache_account,"Date":"hihi"};
+  var objs = {"Type": "", "locationName": "", "address": "","account":"","Date":"hihi"};
   if (typeof info !== 'undefined') {
     objs = JSON.parse(info);
   }
