@@ -1,6 +1,6 @@
 # Safe-Trip: Enjoy going anywhere without worring about CoVID-19!:
-How do you know if your Uber driver have contacted with an infected person?
-How do you know if it's safe to go somewhere you want?
+How do you know if your Uber driver have had contact with someone who had CoVID-19 or is infected himself/herself? <br />
+How do you know if it's safe to go somewhere you want during this pendamic? <br />
 consider using our web app!
 ### Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
 
@@ -8,7 +8,7 @@ consider using our web app!
 ## https://safetripsite.herokuapp.com
 # Description
 
-A project designed to help track if you have had contact with any infected person and also making sure you don't need to worry about catching the virus while being outside :).
+A project designed to help track if you have had contact with any infected person and to also help you make sure you stay away from the virus while being outside :).
 
 # Built With
 Built Front End with React.js <br/>
