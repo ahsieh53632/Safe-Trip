@@ -5,6 +5,7 @@ import Check from "./Check";
 import MyQRcode from "./MyQRcode";
 import UpdateInfo from "./UpdateInfo";
 import AddID from "./AddID";
+import CheckPersonal from "./CheckPersonal";
 
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
