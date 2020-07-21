@@ -1,7 +1,7 @@
 # Safe-Trip: Enjoy going anywhere without worring if you will catch CoVID-19!:
 Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
 # Link
-##　safetripsite.herokuapp.com
+##　https://safetripsite.herokuapp.com
 # Description
 
 A project designed to help track if you have contacted any infected person and also making sure you don't need to worry about catching the virus while being outside :).
