@@ -13,12 +13,12 @@ const ScanQRLocation = ({ search }) => {
   console.log(info)
   var cache_account = null;
 
-  var objs = {"Type": "", "locationName": "", "address": "","account":cache_account,"Date":"hihi"};
+  var objs = {"type": "", "locationName": "", "address": "","account":cache_account,"Date":"hihi"};
   if (typeof info !== 'undefined') {
     objs = JSON.parse(info);
   }
   console.log(objs)
-var Type = objs.Type;
+var type = objs.type;
 var locationName = objs.locationName;
 var address = objs.address;
 var account = objs.account;
@@ -54,7 +54,7 @@ var Date = objs.Date;
           })
     } 
   }
-return <div><h1>type:{Type}</h1><p>yourid: {account}</p><p>locationid: {locationName}</p></div>
+return <div><h1>type:{type}</h1><p>yourid: {account}</p><p>locationid: {locationName}</p></div>
 }
 
 ScanQRLocation.propTypes = {

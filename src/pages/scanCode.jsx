@@ -11,7 +11,10 @@ const ScanQR = ({ search }) => {
   let isMounted = true;
   const { info } = search;
   console.log(info)
-  var objs = JSON.parse(info);
+  var objs = {"Type": "", "locationName": "", "address": "","account":cache_account,"Date":"hihi"};
+  if (typeof info !== 'undefined') {
+    objs = JSON.parse(info);
+  }
   console.log(objs)
   var type = objs.type;
   var locationid = objs.locationid;
