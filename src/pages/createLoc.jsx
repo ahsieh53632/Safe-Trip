@@ -12,9 +12,7 @@ const ScanQRLocation = ({ search }) => {
   const { info } = search;
   console.log(info)
   var cache_account = null;
-  if (window.localStorage != null) {
-    cache_account = window.localStorage.getItem("account");
-  }
+
   var objs = {"Type": "", "locationName": "", "address": "","account":cache_account,"Date":"hihi"};
   if (typeof info !== 'undefined') {
     objs = JSON.parse(info);
