@@ -20,13 +20,14 @@ Node.js <br/>
 install all dependicies: <br />
  run `npm install`
  ## BackEnd config:
-Backend is running on localhost, which means you will need to install MySQL and set connection manually, <br/>
+ If you wish to test this on local host:
+ set up mysql connection in api/app.js, and change all api calls (fetch) to localhost\
 We've provided create_db.sql in /api to help you build all tables you need <br />
 `Table: person, beento, encounter, location` <br/>
 start server: <br/>
 `gatsby develop` <br />
-start api server: <br/>
-進到api folder <br/>
+start api server (): <br/>
+goto /api  <br/>
 `npm install` <br/>
 `npm start`
 
