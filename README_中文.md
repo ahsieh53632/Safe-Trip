@@ -29,7 +29,7 @@ Node.js <br/>
 `npm install` <br/>
 `npm start`
 
-# Functinoality:
+# Functionality:
   - Login/Register: 第一次使用需要註冊帳號 (api 要有運作), 之後便會自己登入
   - 掃描QRCODE: 不須開啟網頁或安裝App, 使用手機相機掃描特定格式QRCODE後 會自動call api 並update 資料
     - ###### 因DB設在localhost 上面, 如需測試請參考下面
