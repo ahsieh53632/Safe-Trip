@@ -25,7 +25,7 @@ var Date = objs.Date;
   
   if (typeof window !== 'undefined') {
     if (Type === "create") {
-      console.log('adding type: beento');
+      console.log('adding type: create');
       fetch('https://safe-trip.herokuapp.com/createLoc/create', {
               method: 'POST',
               headers: {
