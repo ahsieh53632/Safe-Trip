@@ -1,5 +1,5 @@
 # Safe-Trip: Enjoy going anywhere without worring about CoVID-19!:
-How do you know if your Uber driver have had contact with someone who has CoVID-19 or is infected himself/herself? <br />
+How do you know if your Uber driver have had contact with someone who has CoVID-19 or maybe is infected himself/herself? <br />
 How do you know if it's safe to go somewhere you want during this pendamic? <br />
 consider using our web app!
 ### Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
