@@ -37,7 +37,7 @@ goto /api  <br/>
     - ######  if you wish to test this locally check our guide bellow
       - Encounters/Uber: will show you if this individual can be carrying the virus, and store this encounter to our database
       - Places: will store data in our database that indicates you've been to this location at the date
-  - AtRisk: will show when and where you have encountered infected individuals or the place you both have went (不會顯示染病者個人資訊)
+  - AtRisk: will show when and where you have encountered infected individuals or the place you both have went (Does not show their info)
   - MyQRCODE: Generate your personal QRCODE to allow others to scan or create QRCODE or places for tourists/citizens to scan
     - ###### Note: updating you're condition (i.e. if you're infected or atRist) will only be possibe via a doctor, also through scanning a QRCODE
   - UpdateInfo: Updating your personal info (name, phone, address etc.)
