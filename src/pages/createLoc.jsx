@@ -18,7 +18,7 @@ const ScanQRLocation = ({ search }) => {
     objs = JSON.parse(info);
   }
   console.log(objs)
-var type = objs.type;
+var Type = objs.type;
 var locationName = objs.locationName;
 var address = objs.address;
 var account = objs.account;
@@ -54,7 +54,7 @@ var Date = objs.Date;
           })
     } 
   }
-return <div><h1>type:{type}</h1><p>yourid: {account}</p><p>locationid: {locationName}</p></div>
+return <div><h1>type:{Type}</h1><p>yourid: {account}</p><p>locationid: {locationName}</p></div>
 }
 
 ScanQRLocation.propTypes = {
