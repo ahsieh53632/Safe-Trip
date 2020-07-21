@@ -8,7 +8,7 @@ consider using our web app!
 ## https://safetripsite.herokuapp.com
 # Description
 
-A project designed to help tracking if you have had contact with any infected person and to also help you make sure you stay away from the virus while being outside :).
+A project designed to help tracking if you have had contact with any infected person and to also help you make sure you stay away from the virus while going outdoors :).
 
 # Built With
 Built Front End with React.js <br/>
