@@ -52,7 +52,7 @@ class CreateURL extends Component{
         else return (
             <div>
 
-                <Button color="primary" onClick={(e)=>{this.setState({placeURL:"https://safetripsite.herokuapp.com/createLoc?info={ \"Type\":create, \"locationName\":"+this.state.LocationName+",\"address\":"+this.state.address+"}"})}}>
+                <Button color="primary" onClick={(e)=>{this.setState({placeURL:"https://safetripsite.herokuapp.com/createLoc?info={ \"type\":create, \"locationName\":"+this.state.LocationName+",\"address\":"+this.state.address+"}"})}}>
                     生成QRcode
                     </Button>
                 <h4>請輸入地名</h4>
