@@ -13,7 +13,7 @@ const ScanQRLocation = ({ search }) => {
   console.log(info)
   var cache_account = null;
 
-  var objs = {"type": "", "locationName": "", "address": "","account": "","Date":""};
+  var objs = {"type": "", "locationName": "", "address": ""};
   if (typeof info !== 'undefined') {
     objs = JSON.parse(info);
   }
@@ -22,7 +22,7 @@ var Type = objs.type;
 var locationName = objs.locationName;
 var address = objs.address;
 var account=window.localStorage.getItem("account");
-var Date = objs.Date;
+var Date = "hihi";
   
   if (typeof window !== 'undefined') {
     if (Type === "create") {
