@@ -24,9 +24,8 @@ class CreateQRcode extends Component{
     render() {
       return(
         <div>
-          <Header
+          <NoIconHeader
             brand="Safe-Trip"
-            rightLinks={<NoIconHeader />}
             fixed
             changeColorOnScroll={{
             height: 100,
