@@ -35,7 +35,7 @@ goto /api  <br/>
 `npm install` <br/>
 `npm start`
 
-# Functinoality:
+# Functionality:
   - Login/Register: You will need to register the first time, and it should automaticaly log you in after that
   - scan QRCODE: Don't need to open any website or install any apps, just scan it with your builtin camera and our website will make api calls automatically
     - ######  if you wish to test this locally check our guide bellow
