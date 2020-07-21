@@ -1,5 +1,9 @@
 # Safe-Trip: Enjoy going anywhere without worring about CoVID-19!:
-Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
+How do you know if your Uber driver have contacted with an infected person?
+How do you know if it's safe to go somewhere you want?
+consider using our web app!
+### Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
+
 # Link
 ## https://safetripsite.herokuapp.com
 # Description
