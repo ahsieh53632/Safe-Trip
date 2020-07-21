@@ -1,7 +1,7 @@
 # Safe-Trip: Enjoy going anywhere without worring if you will catch CoVID-19!:
 Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
 # Link
-# https://safetripsite.herokuapp.com
+## https://safetripsite.herokuapp.com
 # Description
 
 A project designed to help track if you have contacted any infected person and also making sure you don't need to worry about catching the virus while being outside :).
@@ -48,7 +48,7 @@ start api server: <br/>
 
 # Test QRCODE api calls locally:
 ## Encounters (or Uber, AirBnb):
- - 前往 /scanCode?info={"type": "encounter", "otherpersonid": "the username of the otherperson u met (string)", "locationid": "location id (stored on database, int)", "date": "the date"}
+ - navigate to /scanCode?info={"type": "encounter", "otherpersonid": "the username of the otherperson u met (string)", "locationid": "location id (stored on database, int)", "date": "the date"}
 ## Places:
- - 前往 /scanCode?info={"type": "beento", "locationid": "location id (stored on database, type int)", "date": "the date"}
+ - navigate to /scanCode?info={"type": "beento", "locationid": "location id (stored on database, type int)", "date": "the date"}
 
