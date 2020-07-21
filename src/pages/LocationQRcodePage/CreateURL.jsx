@@ -25,8 +25,8 @@ class CreateURL extends Component{
 
         }
         this.state={
-            
-            LocationID:"",
+            address:"",
+            LocationName:"",
             placeURL:""
 
         }   
@@ -52,11 +52,13 @@ class CreateURL extends Component{
         else return (
             <div>
 
-                <Button color="primary" onClick={(e)=>{this.setState({placeURL:"http://localhost:8000/scanCode?info={ \"type\": beento, \"locationid\":"+this.state.LocationID+",\"otherpersonid\":"+this.cache_account+"}"})}}>
+                <Button color="primary" onClick={(e)=>{this.setState({placeURL:"https://safetripsite.herokuapp.com/createLoc?info={ \"Type\":create, \"locationName\":"+this.state.LocationName+",\"address\":"+this.state.address+"}"})}}>
                     生成QRcode
                     </Button>
-                <h4>請輸入 Location ID</h4>
-                <input type="text" onChange={(e)=>{ this.setState({LocationID:e.target.value}) }}/>
+                <h4>請輸入地名</h4>
+                <input type="text" onChange={(e)=>{ this.setState({LocationName:e.target.value}) }}/>
+                <h4>請輸入地址</h4>
+                <input type="text" onChange={(e)=>{ this.setState({address:e.target.value}) }}/>
                 <Link to="/MainPage/MainPage">
                 <Button color="primary" >
                 上一頁
