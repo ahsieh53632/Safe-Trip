@@ -3,7 +3,7 @@ How do you know if your Uber driver have had contact with someone who has CoVID-
 How do you know if it's safe to go somewhere you want during this pandemic? <br />
 consider using our web app!
 ### Installation Free, Staying away from CoVID-19 is a camera QRCODE scan away!
-#### all you need is your smartphone's builtin camera, record where you've been/check if someone you met is "corona free" in 3 seconds!
+#### easily record where you've been or check if someone you met may be carrying the virus in 3 seconds!
 
 # Link
 ## https://safetripsite.herokuapp.com
